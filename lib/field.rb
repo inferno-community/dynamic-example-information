@@ -26,7 +26,7 @@ module FhirGen
 
       @value = set_value
 
-      puts "Faking value for #{@full_name}"
+      print "Faking value for #{@full_name}, "
 
     end
 
@@ -94,7 +94,7 @@ module FhirGen
     end
 
     def date
-      Faker::Date.backward days: rand(1000)
+      Faker::Date.backward(days: rand(1000)).to_s
     end
 
     def string

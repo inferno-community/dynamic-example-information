@@ -10,4 +10,4 @@ end
 # Test code to run a patient
 
 sd = FhirGen::StructureDefinition.new(source: "data/package/StructureDefinition-us-core-patient.json")
-puts sd.to_h
+pp sd.to_h
