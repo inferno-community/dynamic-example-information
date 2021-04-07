@@ -31,13 +31,15 @@ Project to generate example information dynamically based on a HL7 FHIR implemen
 
 5. Add support for control over the number of examples created (do this after it runs as a rake task).
 
-6. Add additional methods for picking other simple values based on type (string, integer, uri), or values we want to rely on a special method for instead of Faker. Might be a good idea to move these types of methods to their own module or class.
+6. Convert objects back into valid FHIR JSON. Fieldset#to_h method currently gets us close.
 
-7. Lockdown the logic around picking a fake value. This logic is a bit messy right now and it is very important for the team to understand, see Field#set_value.
+7. Add additional methods for picking other simple values based on type (string, integer, uri), or values we want to rely on a special method for instead of Faker. Might be a good idea to move these types of methods to their own module or class.
 
-8. Support for extensions.
+8. Lockdown the logic around picking a fake value. This logic is a bit messy right now and it is very important for the team to understand, see Field#set_value.
 
-9. Support for related attributes. Example: If telecom.system == SMS, then telecom.text should = Faker::Phone.number. This would require attributes have awareness of their siblings and their values.
+9. Support for extensions.
+
+10. Support for related attributes. Example: If telecom.system == SMS, then telecom.text should = Faker::Phone.number. This would require attributes have awareness of their siblings and their values.
 
 # Setting up Ruby
 1. (Install Rbenv)[https://github.com/rbenv/rbenv] - This is a common version manager
