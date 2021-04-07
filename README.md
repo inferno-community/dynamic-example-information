@@ -37,6 +37,8 @@ Project to generate example information dynamically based on a HL7 FHIR implemen
 
 8. Support for extensions.
 
+9. Support for related attributes. Example: If telecom.system == SMS, then telecom.text should = Faker::Phone.number. This would require attributes have awareness of their siblings and their values.
+
 # Setting up Ruby
 1. (Install Rbenv)[https://github.com/rbenv/rbenv] - This is a common version manager
 2. Install Ruby 2.7.2, set it as your default version, and install bundler (package manager for ruby).
