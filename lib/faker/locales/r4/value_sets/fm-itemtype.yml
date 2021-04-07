@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      fm_itemtype:
+      - group
+      - product
+      - service

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      benefit_term:
+      - annual
+      - day
+      - lifetime

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      payment_type:
+      - payment
+      - adjustment
+      - advance

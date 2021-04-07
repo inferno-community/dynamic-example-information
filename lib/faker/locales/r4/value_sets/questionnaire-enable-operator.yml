@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      questionnaire_enable_operator:
+      - exists
+      - "="
+      - "!="
+      - ">"
+      - "<"
+      - ">="
+      - "<="

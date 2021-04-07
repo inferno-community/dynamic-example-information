@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      adverse_event_seriousness:
+      - Non-serious
+      - Serious

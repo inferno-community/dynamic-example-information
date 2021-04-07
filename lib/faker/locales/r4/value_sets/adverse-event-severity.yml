@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      adverse_event_severity:
+      - mild
+      - moderate
+      - severe

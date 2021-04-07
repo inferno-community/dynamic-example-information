@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      contract_action:
+      - action-a
+      - action-b

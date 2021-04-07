@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      effect_estimate_type:
+      - relative-RR
+      - relative-OR
+      - relative-HR
+      - absolute-ARD
+      - absolute-MeanDiff
+      - absolute-SMD
+      - absolute-MedianDiff

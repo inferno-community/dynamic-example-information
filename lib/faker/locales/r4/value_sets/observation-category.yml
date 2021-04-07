@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      observation_category:
+      - social-history
+      - vital-signs
+      - imaging
+      - laboratory
+      - procedure
+      - survey
+      - exam
+      - therapy
+      - activity

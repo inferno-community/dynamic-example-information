@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      financial_taskinputtype:
+      - include
+      - exclude
+      - origresponse
+      - reference
+      - item
+      - period
+      - status

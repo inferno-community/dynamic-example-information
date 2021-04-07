@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      action_cardinality_behavior:
+      - single
+      - multiple

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      goal_acceptance_status:
+      - agree
+      - disagree
+      - pending

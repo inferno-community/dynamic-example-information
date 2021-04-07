@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      bundle_type:
+      - document
+      - message
+      - transaction
+      - transaction-response
+      - batch
+      - batch-response
+      - history
+      - searchset
+      - collection

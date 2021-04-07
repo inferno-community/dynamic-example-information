@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      invoice_price_component_type:
+      - base
+      - surcharge
+      - deduction
+      - discount
+      - tax
+      - informational

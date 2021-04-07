@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      subscription_tag:
+      - queued
+      - delivered

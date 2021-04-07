@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      fundsreserve:
+      - patient
+      - provider
+      - none

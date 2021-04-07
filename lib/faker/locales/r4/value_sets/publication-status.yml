@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      publication_status:
+      - draft
+      - active
+      - retired
+      - unknown

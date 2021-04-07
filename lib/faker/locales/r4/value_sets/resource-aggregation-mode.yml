@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      resource_aggregation_mode:
+      - contained
+      - referenced

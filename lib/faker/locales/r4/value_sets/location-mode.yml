@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      location_mode:
+      - instance
+      - kind

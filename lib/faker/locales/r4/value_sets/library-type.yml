@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      library_type:
+      - logic-library
+      - model-definition
+      - asset-collection
+      - module-definition

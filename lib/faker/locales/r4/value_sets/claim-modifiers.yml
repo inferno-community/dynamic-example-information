@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      claim_modifiers:
+      - a
+      - b
+      - c
+      - e
+      - rooh
+      - x

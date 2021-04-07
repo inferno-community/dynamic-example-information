@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      binding_strength:
+      - required
+      - extensible
+      - preferred
+      - example

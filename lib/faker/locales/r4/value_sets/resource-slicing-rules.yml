@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      resource_slicing_rules:
+      - closed
+      - open
+      - openAtEnd

@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      definition_resource_types:
+      - ActivityDefinition
+      - EventDefinition
+      - Measure
+      - OperationDefinition
+      - PlanDefinition
+      - Questionnaire

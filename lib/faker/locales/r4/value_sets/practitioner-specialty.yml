@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      practitioner_specialty:
+      - cardio
+      - dent
+      - dietary
+      - midw
+      - sysarch

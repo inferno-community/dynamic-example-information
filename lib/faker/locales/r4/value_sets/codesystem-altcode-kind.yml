@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      codesystem_altcode_kind:
+      - alternate
+      - deprecated
+      - case-insensitive
+      - case-sensitive
+      - expression

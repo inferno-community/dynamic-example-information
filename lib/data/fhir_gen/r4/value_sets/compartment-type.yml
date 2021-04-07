@@ -1,0 +1,6 @@
+---
+- Patient
+- Encounter
+- RelatedPerson
+- Practitioner
+- Device

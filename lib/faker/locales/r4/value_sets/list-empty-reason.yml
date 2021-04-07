@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      list_empty_reason:
+      - nilknown
+      - notasked
+      - withheld
+      - unavailable
+      - notstarted
+      - closed

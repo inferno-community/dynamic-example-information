@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      immunization_recommendation_status:
+      - due
+      - overdue
+      - immune
+      - contraindicated
+      - complete

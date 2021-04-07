@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      recommendation_strength:
+      - strong
+      - weak

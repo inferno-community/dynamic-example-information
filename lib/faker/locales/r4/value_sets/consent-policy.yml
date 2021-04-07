@@ -1,0 +1,31 @@
+---
+en:
+  faker:
+    name:
+      consent_policy:
+      - cric
+      - illinois-minor-procedure
+      - hipaa-auth
+      - hipaa-npp
+      - hipaa-restrictions
+      - hipaa-research
+      - hipaa-self-pay
+      - mdhhs-5515
+      - nyssipp
+      - va-10-0484
+      - va-10-0485
+      - va-10-5345
+      - va-10-5345a
+      - va-10-5345a-mhv
+      - va-10-10116
+      - va-21-4142
+      - ssa-827
+      - dch-3927
+      - squaxin
+      - nl-lsp
+      - at-elga
+      - nih-hipaa
+      - nci
+      - nih-grdr
+      - nih-527
+      - ga4gh

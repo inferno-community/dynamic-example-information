@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      address_use:
+      - home
+      - work
+      - temp
+      - old
+      - billing

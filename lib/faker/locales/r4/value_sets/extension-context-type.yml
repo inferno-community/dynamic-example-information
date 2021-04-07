@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      extension_context_type:
+      - fhirpath
+      - element
+      - extension

@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      explanationofbenefit_status:
+      - active
+      - cancelled
+      - draft
+      - entered-in-error

@@ -1,0 +1,53 @@
+---
+en:
+  faker:
+    name:
+      contract_signer_type:
+      - AMENDER
+      - AUTHN
+      - AUT
+      - AFFL
+      - AGNT
+      - ASSIGNED
+      - CIT
+      - CLAIMANT
+      - COAUTH
+      - CONSENTER
+      - CONSWIT
+      - CONT
+      - COPART
+      - COVPTY
+      - DELEGATEE
+      - delegator
+      - DEPEND
+      - DPOWATT
+      - EMGCON
+      - EVTWIT
+      - EXCEST
+      - GRANTEE
+      - GRANTOR
+      - GUAR
+      - GUARD
+      - GUADLTM
+      - INF
+      - INTPRT
+      - INSBJ
+      - HPOWATT
+      - HPROV
+      - LEGAUTHN
+      - NMDINS
+      - NOK
+      - NOTARY
+      - PAT
+      - POWATT
+      - PRIMAUTH
+      - PRIRECIP
+      - RECIP
+      - RESPRSN
+      - REVIEWER
+      - TRANS
+      - SOURCE
+      - SPOWATT
+      - VALID
+      - VERF
+      - WIT

@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      related_artifact_type:
+      - documentation
+      - justification
+      - citation
+      - predecessor
+      - successor
+      - derived-from
+      - depends-on
+      - composed-of

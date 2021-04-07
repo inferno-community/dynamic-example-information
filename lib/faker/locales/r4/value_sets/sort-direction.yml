@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      sort_direction:
+      - ascending
+      - descending

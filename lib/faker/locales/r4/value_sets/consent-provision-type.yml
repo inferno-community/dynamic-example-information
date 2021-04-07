@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      consent_provision_type:
+      - deny
+      - permit

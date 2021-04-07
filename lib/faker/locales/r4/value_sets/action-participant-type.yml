@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      action_participant_type:
+      - patient
+      - practitioner
+      - related-person
+      - device

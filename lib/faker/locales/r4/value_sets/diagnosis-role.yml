@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      diagnosis_role:
+      - AD
+      - DD
+      - CC
+      - CM
+      - pre-op
+      - post-op
+      - billing

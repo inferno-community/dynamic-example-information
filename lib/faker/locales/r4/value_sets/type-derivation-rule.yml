@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      type_derivation_rule:
+      - specialization
+      - constraint

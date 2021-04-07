@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      medicationrequest_intent:
+      - proposal
+      - plan
+      - order
+      - original-order
+      - reflex-order
+      - filler-order
+      - instance-order
+      - option

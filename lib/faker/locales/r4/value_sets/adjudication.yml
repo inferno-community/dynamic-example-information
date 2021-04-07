@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      adjudication:
+      - submitted
+      - copay
+      - eligible
+      - deductible
+      - unallocdeduct
+      - eligpercent
+      - tax
+      - benefit

@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      verificationresult_validation_process:
+      - edit-check
+      - valueset
+      - primary
+      - multi
+      - standalone
+      - in-context

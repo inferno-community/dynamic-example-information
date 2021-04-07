@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      device_statement_status:
+      - active
+      - completed
+      - entered-in-error
+      - intended
+      - stopped
+      - on-hold

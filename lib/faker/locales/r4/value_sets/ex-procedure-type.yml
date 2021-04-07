@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      ex_procedure_type:
+      - primary
+      - secondary

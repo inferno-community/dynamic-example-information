@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      consent_performer:
+      - consenter
+      - grantee
+      - grantor
+      - delegatee
+      - delegator

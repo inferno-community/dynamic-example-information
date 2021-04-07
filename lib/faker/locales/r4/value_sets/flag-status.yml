@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      flag_status:
+      - active
+      - inactive
+      - entered-in-error

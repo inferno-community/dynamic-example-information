@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      testscript_profile_origin_types:
+      - FHIR-Client
+      - FHIR-SDC-FormFiller

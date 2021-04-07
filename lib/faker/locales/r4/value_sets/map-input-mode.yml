@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      map_input_mode:
+      - source
+      - target

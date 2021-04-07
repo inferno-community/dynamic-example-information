@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      research_element_type:
+      - population
+      - exposure
+      - outcome

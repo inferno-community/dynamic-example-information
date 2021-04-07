@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      financial_taskcode:
+      - cancel
+      - poll
+      - release
+      - reprocess
+      - status

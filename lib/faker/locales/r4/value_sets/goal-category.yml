@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      goal_category:
+      - dietary
+      - safety
+      - behavioral
+      - nursing
+      - physiotherapy

@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      restful_security_service:
+      - OAuth
+      - SMART-on-FHIR
+      - NTLM
+      - Basic
+      - Kerberos
+      - Certificates

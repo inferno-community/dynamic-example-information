@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      copy_number_event:
+      - amp
+      - del
+      - lof

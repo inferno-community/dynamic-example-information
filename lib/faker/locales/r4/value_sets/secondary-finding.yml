@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      secondary_finding:
+      - acmg-version1
+      - acmg-version2

@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      benefit_network:
+      - in
+      - out

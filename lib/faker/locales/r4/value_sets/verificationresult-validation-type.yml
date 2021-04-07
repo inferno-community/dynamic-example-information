@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      verificationresult_validation_type:
+      - nothing
+      - primary
+      - multiple

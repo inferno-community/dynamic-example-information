@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      data_absent_reason:
+      - unknown
+      - masked
+      - not-applicable
+      - unsupported
+      - as-text
+      - error
+      - not-performed
+      - not-permitted

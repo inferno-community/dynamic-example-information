@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      consent_action:
+      - collect
+      - access
+      - use
+      - disclose
+      - correct

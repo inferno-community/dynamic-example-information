@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      goal_priority:
+      - high-priority
+      - medium-priority
+      - low-priority

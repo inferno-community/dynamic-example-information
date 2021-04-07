@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      encounter_status:
+      - planned
+      - arrived
+      - triaged
+      - in-progress
+      - onleave
+      - finished
+      - cancelled
+      - entered-in-error
+      - unknown

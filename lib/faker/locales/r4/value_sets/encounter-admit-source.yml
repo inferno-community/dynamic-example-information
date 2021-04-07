@@ -1,0 +1,15 @@
+---
+en:
+  faker:
+    name:
+      encounter_admit_source:
+      - hosp-trans
+      - emd
+      - outp
+      - born
+      - gp
+      - mp
+      - nursing
+      - psych
+      - rehab
+      - other

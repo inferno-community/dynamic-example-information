@@ -1,0 +1,17 @@
+---
+en:
+  faker:
+    name:
+      container_cap:
+      - red
+      - yellow
+      - dark-yellow
+      - grey
+      - light-blue
+      - black
+      - green
+      - light-green
+      - lavender
+      - brown
+      - white
+      - pink

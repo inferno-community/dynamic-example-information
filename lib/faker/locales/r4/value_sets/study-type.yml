@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      study_type:
+      - RCT
+      - CCT
+      - cohort
+      - case-control
+      - series
+      - case-report
+      - mixed

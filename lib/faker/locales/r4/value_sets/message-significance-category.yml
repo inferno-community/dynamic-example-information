@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      message_significance_category:
+      - consequence
+      - currency
+      - notification

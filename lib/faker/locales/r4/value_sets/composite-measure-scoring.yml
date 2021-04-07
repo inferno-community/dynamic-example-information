@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      composite_measure_scoring:
+      - opportunity
+      - all-or-nothing
+      - linear
+      - weighted

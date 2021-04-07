@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      code_search_support:
+      - explicit
+      - all

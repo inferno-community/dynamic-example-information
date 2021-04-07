@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      consent_data_meaning:
+      - instance
+      - related
+      - dependents
+      - authoredby

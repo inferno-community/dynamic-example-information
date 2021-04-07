@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      map_model_mode:
+      - source
+      - queried
+      - target
+      - produced

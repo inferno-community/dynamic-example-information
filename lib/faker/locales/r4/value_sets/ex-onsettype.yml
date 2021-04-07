@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      ex_onsettype:
+      - lxm
+      - sym
+      - lmn

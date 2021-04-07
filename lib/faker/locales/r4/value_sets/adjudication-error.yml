@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      adjudication_error:
+      - a001
+      - a002

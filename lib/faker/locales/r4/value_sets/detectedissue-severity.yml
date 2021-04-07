@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      detectedissue_severity:
+      - high
+      - moderate
+      - low

@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      dose_rate_type:
+      - calculated
+      - ordered

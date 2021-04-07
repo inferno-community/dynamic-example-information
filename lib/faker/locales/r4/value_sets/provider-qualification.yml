@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      provider_qualification:
+      - '311405'
+      - '604215'
+      - '604210'

@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      questionnaire_answers_status:
+      - in-progress
+      - completed
+      - amended
+      - entered-in-error
+      - stopped

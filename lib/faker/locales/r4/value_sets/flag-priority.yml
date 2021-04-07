@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      flag_priority:
+      - PN
+      - PL
+      - PM
+      - PH

@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      consent_state_codes:
+      - draft
+      - proposed
+      - active
+      - rejected
+      - inactive
+      - entered-in-error

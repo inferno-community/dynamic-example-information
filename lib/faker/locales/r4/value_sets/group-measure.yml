@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      group_measure:
+      - mean
+      - median
+      - mean-of-mean
+      - mean-of-median
+      - median-of-mean
+      - median-of-median

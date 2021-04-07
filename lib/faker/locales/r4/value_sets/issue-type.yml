@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      issue_type:
+      - invalid
+      - security
+      - processing
+      - transient
+      - informational

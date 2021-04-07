@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      measure_type:
+      - process
+      - outcome
+      - structure
+      - patient-reported-outcome
+      - composite

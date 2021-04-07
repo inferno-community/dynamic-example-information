@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      invoice_status:
+      - draft
+      - issued
+      - balanced
+      - cancelled
+      - entered-in-error

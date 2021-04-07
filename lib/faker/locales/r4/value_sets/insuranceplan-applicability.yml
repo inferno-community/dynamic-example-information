@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      insuranceplan_applicability:
+      - in-network
+      - out-of-network
+      - other

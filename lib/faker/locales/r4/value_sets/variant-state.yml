@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      variant_state:
+      - positive
+      - negative
+      - absent

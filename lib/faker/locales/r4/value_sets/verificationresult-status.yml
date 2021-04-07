@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      verificationresult_status:
+      - attested
+      - validated
+      - in-process
+      - req-revalid
+      - val-fail
+      - reval-fail

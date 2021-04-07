@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      guide_page_generation:
+      - html
+      - markdown
+      - xml
+      - generated

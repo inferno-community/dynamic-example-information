@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      vision_base_codes:
+      - up
+      - down
+      - in
+      - out

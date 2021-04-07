@@ -1,0 +1,29 @@
+---
+en:
+  faker:
+    name:
+      hl7_work_group:
+      - cbcc
+      - cds
+      - cqi
+      - cg
+      - dev
+      - ehr
+      - fhir
+      - fm
+      - hsi
+      - ii
+      - inm
+      - its
+      - mnm
+      - oo
+      - pa
+      - pc
+      - pher
+      - phx
+      - brr
+      - sd
+      - sec
+      - us
+      - vocab
+      - aid

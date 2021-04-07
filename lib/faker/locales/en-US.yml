@@ -1,0 +1,6 @@
+en:
+  faker:
+    name:
+      examples_test:
+        - Test
+        - Test2

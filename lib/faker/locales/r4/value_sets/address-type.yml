@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      address_type:
+      - postal
+      - physical
+      - both

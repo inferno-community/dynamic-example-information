@@ -1,0 +1,19 @@
+---
+en:
+  faker:
+    name:
+      claim_informationcategory:
+      - info
+      - discharge
+      - onset
+      - related
+      - exception
+      - material
+      - attachment
+      - missingtooth
+      - prosthesis
+      - other
+      - hospitalized
+      - employmentimpacted
+      - externalcause
+      - patientreasonforvisit

@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      medicationrequest_status:
+      - active
+      - on-hold
+      - cancelled
+      - completed
+      - entered-in-error
+      - stopped
+      - draft
+      - unknown

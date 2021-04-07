@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      activity_definition_category:
+      - treatment
+      - education
+      - assessment

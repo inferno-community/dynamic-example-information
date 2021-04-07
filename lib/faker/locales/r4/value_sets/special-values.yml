@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      special_values:
+      - 'true'
+      - 'false'
+      - trace
+      - sufficient
+      - withdrawn
+      - nil-known

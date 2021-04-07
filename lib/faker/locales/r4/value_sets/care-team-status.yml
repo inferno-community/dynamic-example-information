@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      care_team_status:
+      - proposed
+      - active
+      - suspended
+      - inactive
+      - entered-in-error

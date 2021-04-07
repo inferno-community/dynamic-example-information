@@ -1,0 +1,17 @@
+---
+en:
+  faker:
+    name:
+      ex_diagnosistype:
+      - admitting
+      - clinical
+      - differential
+      - discharge
+      - laboratory
+      - nursing
+      - prenatal
+      - principal
+      - radiology
+      - remote
+      - retrospective
+      - self

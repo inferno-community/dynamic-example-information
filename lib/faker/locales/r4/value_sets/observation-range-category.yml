@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      observation_range_category:
+      - reference
+      - critical
+      - absolute

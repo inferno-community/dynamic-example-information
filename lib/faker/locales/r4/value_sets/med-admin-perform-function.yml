@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      med_admin_perform_function:
+      - performer
+      - verifier
+      - witness

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      conceptmap_unmapped_mode:
+      - provided
+      - fixed
+      - other-map

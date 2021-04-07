@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      substance_status:
+      - active
+      - inactive
+      - entered-in-error

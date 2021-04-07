@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      measure_report_status:
+      - complete
+      - pending
+      - error

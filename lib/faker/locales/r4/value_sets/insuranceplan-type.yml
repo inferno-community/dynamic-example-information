@@ -1,0 +1,15 @@
+---
+en:
+  faker:
+    name:
+      insuranceplan_type:
+      - medical
+      - dental
+      - mental
+      - subst-ab
+      - vision
+      - Drug
+      - short-term
+      - long-term
+      - hospice
+      - home

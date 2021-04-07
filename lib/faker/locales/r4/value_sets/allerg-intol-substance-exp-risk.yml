@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      allerg_intol_substance_exp_risk:
+      - known-reaction-risk
+      - no-known-reaction-risk

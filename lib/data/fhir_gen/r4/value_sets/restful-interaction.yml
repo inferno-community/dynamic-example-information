@@ -1,0 +1,13 @@
+---
+- read
+- vread
+- update
+- patch
+- delete
+- history
+- create
+- search
+- capabilities
+- transaction
+- batch
+- operation

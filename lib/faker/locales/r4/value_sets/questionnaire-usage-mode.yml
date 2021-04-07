@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      questionnaire_usage_mode:
+      - capture-display
+      - capture
+      - display
+      - display-non-empty
+      - capture-display-non-empty

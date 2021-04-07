@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      sequence_type:
+      - aa
+      - dna
+      - rna

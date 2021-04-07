@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      product_storage_scale:
+      - farenheit
+      - celsius
+      - kelvin

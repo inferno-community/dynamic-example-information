@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      action_condition_kind:
+      - applicability
+      - start
+      - stop

@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      identifier_use:
+      - usual
+      - official
+      - temp
+      - secondary
+      - old

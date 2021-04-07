@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      assert_direction_codes:
+      - response
+      - request

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      media_type:
+      - image
+      - video
+      - audio

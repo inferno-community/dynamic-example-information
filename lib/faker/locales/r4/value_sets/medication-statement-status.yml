@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      medication_statement_status:
+      - active
+      - completed
+      - entered-in-error
+      - intended
+      - stopped
+      - on-hold
+      - unknown
+      - not-taken

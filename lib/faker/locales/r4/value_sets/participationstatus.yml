@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      participationstatus:
+      - accepted
+      - declined
+      - tentative
+      - needs-action

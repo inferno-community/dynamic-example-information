@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      filter_operator:
+      - "="
+      - is-a
+      - descendent-of
+      - is-not-a
+      - regex
+      - in
+      - not-in
+      - generalizes
+      - exists

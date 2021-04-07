@@ -1,0 +1,6 @@
+---
+en:
+  faker:
+    name:
+      contract_decision_mode:
+      - policy

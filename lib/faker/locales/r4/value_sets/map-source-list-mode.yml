@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      map_source_list_mode:
+      - first
+      - not_first
+      - last
+      - not_last
+      - only_one

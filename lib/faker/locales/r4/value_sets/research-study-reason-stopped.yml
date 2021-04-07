@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      research_study_reason_stopped:
+      - accrual-goal-met
+      - closed-due-to-toxicity
+      - closed-due-to-lack-of-study-progress
+      - temporarily-closed-per-study-design

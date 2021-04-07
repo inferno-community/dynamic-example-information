@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      remittance_outcome:
+      - queued
+      - complete
+      - error
+      - partial

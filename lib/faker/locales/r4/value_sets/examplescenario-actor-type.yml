@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      examplescenario_actor_type:
+      - person
+      - entity

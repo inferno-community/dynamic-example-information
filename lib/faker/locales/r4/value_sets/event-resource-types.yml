@@ -1,0 +1,39 @@
+---
+en:
+  faker:
+    name:
+      event_resource_types:
+      - ChargeItem
+      - ClaimResponse
+      - ClinicalImpression
+      - Communication
+      - Composition
+      - Condition
+      - Consent
+      - Coverage
+      - DeviceUseStatement
+      - DiagnosticReport
+      - DocumentManifest
+      - DocumentReference
+      - Encounter
+      - EnrollmentResponse
+      - EpisodeOfCare
+      - ExplanationOfBenefit
+      - FamilyMemberHistory
+      - GuidanceResponse
+      - ImagingStudy
+      - Immunization
+      - MeasureReport
+      - Media
+      - MedicationAdministration
+      - MedicationDispense
+      - MedicationStatement
+      - Observation
+      - PaymentNotice
+      - PaymentReconciliation
+      - Procedure
+      - ProcessResponse
+      - QuestionnaireResponse
+      - RiskAssessment
+      - SupplyDelivery
+      - Task

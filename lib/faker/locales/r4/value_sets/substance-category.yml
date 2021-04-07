@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      substance_category:
+      - allergen
+      - biological
+      - body
+      - chemical
+      - food
+      - drug
+      - material

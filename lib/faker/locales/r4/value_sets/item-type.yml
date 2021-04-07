@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      item_type:
+      - group
+      - display
+      - question

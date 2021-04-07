@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      communication_category:
+      - alert
+      - notification
+      - reminder
+      - instruction

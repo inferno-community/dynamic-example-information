@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      diagnostic_report_status:
+      - registered
+      - partial
+      - final
+      - amended
+      - cancelled
+      - entered-in-error
+      - unknown

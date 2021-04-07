@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      audit_event_outcome:
+      - '0'
+      - '4'
+      - '8'
+      - '12'

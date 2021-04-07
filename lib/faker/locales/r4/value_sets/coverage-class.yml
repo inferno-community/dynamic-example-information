@@ -1,0 +1,16 @@
+---
+en:
+  faker:
+    name:
+      coverage_class:
+      - group
+      - subgroup
+      - plan
+      - subplan
+      - class
+      - subclass
+      - sequence
+      - rxbin
+      - rxpcn
+      - rxid
+      - rxgroup

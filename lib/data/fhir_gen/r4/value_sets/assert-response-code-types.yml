@@ -1,0 +1,13 @@
+---
+- okay
+- created
+- noContent
+- notModified
+- bad
+- forbidden
+- notFound
+- methodNotAllowed
+- conflict
+- gone
+- preconditionFailed
+- unprocessable

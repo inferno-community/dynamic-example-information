@@ -1,0 +1,6 @@
+---
+en:
+  faker:
+    name:
+      common_tags:
+      - actionable

@@ -1,0 +1,16 @@
+---
+en:
+  faker:
+    name:
+      permitted_data_type:
+      - Quantity
+      - CodeableConcept
+      - string
+      - boolean
+      - integer
+      - Range
+      - Ratio
+      - SampledData
+      - time
+      - dateTime
+      - Period

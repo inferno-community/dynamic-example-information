@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      risk_probability:
+      - negligible
+      - low
+      - moderate
+      - high
+      - certain

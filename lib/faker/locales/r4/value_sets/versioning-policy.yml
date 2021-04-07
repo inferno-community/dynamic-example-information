@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      versioning_policy:
+      - no-version
+      - versioned
+      - versioned-update

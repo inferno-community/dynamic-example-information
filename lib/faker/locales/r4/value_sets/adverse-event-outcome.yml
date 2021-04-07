@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      adverse_event_outcome:
+      - resolved
+      - recovering
+      - ongoing
+      - resolvedWithSequelae
+      - fatal
+      - unknown

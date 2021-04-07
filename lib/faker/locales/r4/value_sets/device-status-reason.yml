@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      device_status_reason:
+      - online
+      - paused
+      - standby
+      - offline
+      - not-ready
+      - transduc-discon
+      - hw-discon
+      - 'off'

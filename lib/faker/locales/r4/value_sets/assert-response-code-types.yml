@@ -1,0 +1,17 @@
+---
+en:
+  faker:
+    name:
+      assert_response_code_types:
+      - okay
+      - created
+      - noContent
+      - notModified
+      - bad
+      - forbidden
+      - notFound
+      - methodNotAllowed
+      - conflict
+      - gone
+      - preconditionFailed
+      - unprocessable

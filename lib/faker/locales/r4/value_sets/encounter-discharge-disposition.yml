@@ -1,0 +1,16 @@
+---
+en:
+  faker:
+    name:
+      encounter_discharge_disposition:
+      - home
+      - alt-home
+      - other-hcf
+      - hosp
+      - long
+      - aadvice
+      - exp
+      - psy
+      - rehab
+      - snf
+      - oth

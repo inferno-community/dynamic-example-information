@@ -1,0 +1,18 @@
+---
+en:
+  faker:
+    name:
+      medicationrequest_status_reason:
+      - altchoice
+      - clarif
+      - drughigh
+      - hospadm
+      - labint
+      - non-avail
+      - preg
+      - salg
+      - sddi
+      - sdupther
+      - sintol
+      - surg
+      - washout

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      payeetype:
+      - subscriber
+      - provider
+      - other

@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      event_capability_mode:
+      - sender
+      - receiver

@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      concept_subsumption_outcome:
+      - equivalent
+      - subsumes
+      - subsumed-by
+      - not-subsumed

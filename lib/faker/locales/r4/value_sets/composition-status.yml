@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      composition_status:
+      - preliminary
+      - final
+      - amended
+      - entered-in-error

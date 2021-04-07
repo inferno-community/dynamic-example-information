@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      allergy_intolerance_category:
+      - food
+      - medication
+      - environment
+      - biologic

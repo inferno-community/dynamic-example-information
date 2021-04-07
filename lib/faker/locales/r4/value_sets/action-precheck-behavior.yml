@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      action_precheck_behavior:
+      - 'yes'
+      - 'no'

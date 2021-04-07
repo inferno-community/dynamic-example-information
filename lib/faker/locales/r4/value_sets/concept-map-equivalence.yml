@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      concept_map_equivalence:
+      - relatedto
+      - unmatched

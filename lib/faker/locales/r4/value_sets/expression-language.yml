@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      expression_language:
+      - text/cql
+      - text/fhirpath
+      - application/x-fhir-query

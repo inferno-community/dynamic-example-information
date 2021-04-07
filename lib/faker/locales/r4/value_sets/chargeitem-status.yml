@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      chargeitem_status:
+      - planned
+      - billable
+      - not-billable
+      - aborted
+      - billed
+      - entered-in-error
+      - unknown

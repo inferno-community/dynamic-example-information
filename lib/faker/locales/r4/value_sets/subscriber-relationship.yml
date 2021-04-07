@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      subscriber_relationship:
+      - child
+      - parent
+      - spouse
+      - common
+      - other
+      - self
+      - injured

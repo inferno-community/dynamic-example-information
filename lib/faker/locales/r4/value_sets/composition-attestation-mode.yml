@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      composition_attestation_mode:
+      - personal
+      - professional
+      - legal
+      - official

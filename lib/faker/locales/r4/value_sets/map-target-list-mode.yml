@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      map_target_list_mode:
+      - first
+      - share
+      - last
+      - collate

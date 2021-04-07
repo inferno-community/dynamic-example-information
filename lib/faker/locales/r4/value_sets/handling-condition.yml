@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      handling_condition:
+      - room
+      - refrigerated
+      - frozen

@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      operation_kind:
+      - operation
+      - query

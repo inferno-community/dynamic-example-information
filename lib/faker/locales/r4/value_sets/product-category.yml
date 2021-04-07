@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      product_category:
+      - organ
+      - tissue
+      - fluid
+      - cells
+      - biologicalAgent

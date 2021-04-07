@@ -1,0 +1,18 @@
+---
+- create
+- copy
+- truncate
+- escape
+- cast
+- append
+- translate
+- reference
+- dateOp
+- uuid
+- pointer
+- evaluate
+- cc
+- c
+- qty
+- id
+- cp

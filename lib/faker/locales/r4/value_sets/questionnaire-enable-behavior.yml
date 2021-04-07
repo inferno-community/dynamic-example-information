@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      questionnaire_enable_behavior:
+      - all
+      - any

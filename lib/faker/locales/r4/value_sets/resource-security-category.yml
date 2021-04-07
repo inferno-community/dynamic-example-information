@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      resource_security_category:
+      - anonymous
+      - business
+      - individual
+      - patient
+      - not-classified

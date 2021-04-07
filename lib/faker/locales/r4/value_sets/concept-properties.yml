@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      concept_properties:
+      - inactive
+      - deprecated
+      - notSelectable
+      - parent
+      - child

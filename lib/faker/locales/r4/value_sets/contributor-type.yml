@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      contributor_type:
+      - author
+      - editor
+      - reviewer
+      - endorser

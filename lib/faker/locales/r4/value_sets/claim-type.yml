@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      claim_type:
+      - institutional
+      - oral
+      - pharmacy
+      - professional
+      - vision

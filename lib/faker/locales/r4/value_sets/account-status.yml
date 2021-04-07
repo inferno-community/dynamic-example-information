@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      account_status:
+      - active
+      - inactive
+      - entered-in-error
+      - on-hold
+      - unknown

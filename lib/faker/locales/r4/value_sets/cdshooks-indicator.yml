@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      cdshooks_indicator:
+      - info
+      - warning
+      - critical

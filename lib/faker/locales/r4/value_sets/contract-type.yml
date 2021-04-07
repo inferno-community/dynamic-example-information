@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      contract_type:
+      - privacy
+      - disclosure
+      - healthinsurance
+      - supply
+      - consent

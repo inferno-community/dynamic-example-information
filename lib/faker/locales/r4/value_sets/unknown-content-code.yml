@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      unknown_content_code:
+      - 'no'
+      - extensions
+      - elements
+      - both

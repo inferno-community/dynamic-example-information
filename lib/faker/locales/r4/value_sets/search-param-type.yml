@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      search_param_type:
+      - number
+      - date
+      - string
+      - token
+      - reference
+      - composite
+      - quantity
+      - uri
+      - special

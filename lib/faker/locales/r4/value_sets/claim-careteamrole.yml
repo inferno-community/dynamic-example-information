@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      claim_careteamrole:
+      - primary
+      - assist
+      - supervisor
+      - other

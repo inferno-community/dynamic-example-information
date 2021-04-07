@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      contactentity_type:
+      - BILL
+      - ADMIN
+      - HR
+      - PAYOR
+      - PATINF
+      - PRESS

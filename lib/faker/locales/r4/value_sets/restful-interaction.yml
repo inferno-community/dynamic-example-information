@@ -1,0 +1,17 @@
+---
+en:
+  faker:
+    name:
+      restful_interaction:
+      - read
+      - vread
+      - update
+      - patch
+      - delete
+      - history
+      - create
+      - search
+      - capabilities
+      - transaction
+      - batch
+      - operation

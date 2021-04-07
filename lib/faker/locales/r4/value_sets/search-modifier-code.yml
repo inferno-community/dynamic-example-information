@@ -1,0 +1,17 @@
+---
+en:
+  faker:
+    name:
+      search_modifier_code:
+      - missing
+      - exact
+      - contains
+      - not
+      - text
+      - in
+      - not-in
+      - below
+      - above
+      - type
+      - identifier
+      - ofType

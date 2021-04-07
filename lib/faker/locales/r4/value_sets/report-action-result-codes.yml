@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      report_action_result_codes:
+      - pass
+      - skip
+      - fail
+      - warning
+      - error

@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      contact_point_system:
+      - phone
+      - fax
+      - email
+      - pager
+      - url
+      - sms
+      - other

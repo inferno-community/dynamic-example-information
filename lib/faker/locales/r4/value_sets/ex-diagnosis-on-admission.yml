@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      ex_diagnosis_on_admission:
+      - y
+      - n
+      - u
+      - w

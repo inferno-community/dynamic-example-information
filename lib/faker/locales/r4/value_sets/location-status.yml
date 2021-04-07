@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      location_status:
+      - active
+      - suspended
+      - inactive

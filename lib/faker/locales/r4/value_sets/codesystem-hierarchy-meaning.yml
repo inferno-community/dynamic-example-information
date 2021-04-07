@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      codesystem_hierarchy_meaning:
+      - grouped-by
+      - is-a
+      - part-of
+      - classified-with

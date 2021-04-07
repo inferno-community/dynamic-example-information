@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      synthesis_type:
+      - std-MA
+      - IPD-MA
+      - indirect-NMA
+      - combined-NMA
+      - range
+      - classification

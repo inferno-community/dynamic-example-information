@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      rejection_criteria:
+      - hemolized
+      - insufficient
+      - broken
+      - clotted
+      - wrong-temperature

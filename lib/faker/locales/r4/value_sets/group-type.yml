@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      group_type:
+      - person
+      - animal
+      - practitioner
+      - device
+      - medication
+      - substance

@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      medicationrequest_category:
+      - inpatient
+      - outpatient
+      - community
+      - discharge

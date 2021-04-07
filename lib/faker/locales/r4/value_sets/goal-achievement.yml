@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      goal_achievement:
+      - in-progress
+      - achieved
+      - not-achieved

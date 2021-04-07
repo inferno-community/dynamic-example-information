@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      goal_status:
+      - proposed
+      - planned
+      - accepted
+      - cancelled
+      - entered-in-error
+      - rejected

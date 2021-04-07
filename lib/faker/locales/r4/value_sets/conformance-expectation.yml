@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      conformance_expectation:
+      - SHALL
+      - SHOULD
+      - MAY
+      - SHOULD-NOT

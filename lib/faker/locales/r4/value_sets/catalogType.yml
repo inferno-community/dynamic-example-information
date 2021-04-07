@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      catalog_type:
+      - medication
+      - device
+      - protocol

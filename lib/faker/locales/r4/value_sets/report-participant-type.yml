@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      report_participant_type:
+      - test-engine
+      - client
+      - server

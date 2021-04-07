@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      specimen_status:
+      - available
+      - unavailable
+      - unsatisfactory
+      - entered-in-error

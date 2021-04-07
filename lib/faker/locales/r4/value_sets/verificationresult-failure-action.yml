@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      verificationresult_failure_action:
+      - fatal
+      - warn
+      - rec-only
+      - none

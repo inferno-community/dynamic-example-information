@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      link_type:
+      - replaced-by
+      - replaces
+      - refer
+      - seealso

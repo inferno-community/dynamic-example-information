@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      supplydelivery_type:
+      - medication
+      - device

@@ -1,0 +1,26 @@
+---
+en:
+  faker:
+    name:
+      observation_statistics:
+      - average
+      - maximum
+      - minimum
+      - count
+      - total-count
+      - median
+      - std-dev
+      - sum
+      - variance
+      - 20-percent
+      - 80-percent
+      - 4-lower
+      - 4-upper
+      - 4-dev
+      - 5-1
+      - 5-2
+      - 5-3
+      - 5-4
+      - skew
+      - kurtosis
+      - regression

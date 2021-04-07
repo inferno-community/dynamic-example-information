@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      concept_property_type:
+      - code
+      - Coding
+      - string
+      - integer
+      - boolean
+      - dateTime
+      - decimal

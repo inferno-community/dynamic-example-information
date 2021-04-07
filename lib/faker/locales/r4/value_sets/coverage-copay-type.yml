@@ -1,0 +1,15 @@
+---
+en:
+  faker:
+    name:
+      coverage_copay_type:
+      - gpvisit
+      - spvisit
+      - emergency
+      - inpthosp
+      - televisit
+      - urgentcare
+      - copaypct
+      - copay
+      - deductible
+      - maxoutofpocket

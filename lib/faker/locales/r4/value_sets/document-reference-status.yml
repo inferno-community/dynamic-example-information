@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      document_reference_status:
+      - current
+      - superseded
+      - entered-in-error

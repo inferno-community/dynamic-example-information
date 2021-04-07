@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      measure_data_usage:
+      - supplemental-data
+      - risk-adjustment-factor

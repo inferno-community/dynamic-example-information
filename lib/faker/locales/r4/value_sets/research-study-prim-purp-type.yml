@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      research_study_prim_purp_type:
+      - treatment
+      - prevention
+      - diagnostic
+      - supportive-care
+      - screening
+      - health-services-research
+      - basic-science
+      - device-feasibility

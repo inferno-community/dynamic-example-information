@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      document_relationship_type:
+      - replaces
+      - transforms
+      - signs
+      - appends

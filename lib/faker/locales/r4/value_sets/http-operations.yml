@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      http_operations:
+      - delete
+      - get
+      - options
+      - patch
+      - post
+      - put
+      - head

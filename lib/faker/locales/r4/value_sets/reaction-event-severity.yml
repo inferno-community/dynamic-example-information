@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      reaction_event_severity:
+      - mild
+      - moderate
+      - severe

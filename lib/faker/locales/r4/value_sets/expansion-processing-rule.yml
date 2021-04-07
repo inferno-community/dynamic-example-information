@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      expansion_processing_rule:
+      - all-codes
+      - ungrouped
+      - groups-only

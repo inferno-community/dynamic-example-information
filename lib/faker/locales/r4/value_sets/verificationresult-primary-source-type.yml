@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      verificationresult_primary_source_type:
+      - lic-board
+      - prim
+      - cont-ed
+      - post-serv
+      - rel-own
+      - reg-auth
+      - legal
+      - issuer
+      - auth-source

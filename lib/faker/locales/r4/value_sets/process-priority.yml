@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      process_priority:
+      - stat
+      - normal
+      - deferred

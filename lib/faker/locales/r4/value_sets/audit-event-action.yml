@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      audit_event_action:
+      - C
+      - R
+      - U
+      - D
+      - E

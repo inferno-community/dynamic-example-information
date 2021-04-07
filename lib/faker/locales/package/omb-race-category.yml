@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      omb_race_category:
+      - 1002-5
+      - 2028-9
+      - 2054-5
+      - 2076-8
+      - 2106-3
+      - UNK
+      - ASKU

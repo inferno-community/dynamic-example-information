@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      request_intent:
+      - proposal
+      - plan
+      - directive
+      - order
+      - option

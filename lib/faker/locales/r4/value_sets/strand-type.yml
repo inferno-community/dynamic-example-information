@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      strand_type:
+      - watson
+      - crick

@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      udi_entry_type:
+      - barcode
+      - rfid
+      - manual
+      - card
+      - self-reported
+      - unknown

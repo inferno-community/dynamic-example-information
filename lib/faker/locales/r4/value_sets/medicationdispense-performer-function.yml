@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      medicationdispense_performer_function:
+      - dataenterer
+      - packager
+      - checker
+      - finalchecker

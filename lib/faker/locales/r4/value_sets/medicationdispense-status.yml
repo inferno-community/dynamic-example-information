@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      medicationdispense_status:
+      - preparation
+      - in-progress
+      - cancelled
+      - on-hold
+      - completed
+      - entered-in-error
+      - stopped
+      - declined
+      - unknown

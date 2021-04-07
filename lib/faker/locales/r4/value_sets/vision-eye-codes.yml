@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      vision_eye_codes:
+      - right
+      - left

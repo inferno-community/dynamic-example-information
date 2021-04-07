@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      service_referral_method:
+      - fax
+      - phone
+      - elec
+      - semail
+      - mail

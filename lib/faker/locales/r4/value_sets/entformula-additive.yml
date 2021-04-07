@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      entformula_additive:
+      - lipid
+      - protein
+      - carbohydrate
+      - fiber
+      - water

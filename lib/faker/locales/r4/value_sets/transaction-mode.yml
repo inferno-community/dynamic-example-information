@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      transaction_mode:
+      - not-supported
+      - batch
+      - transaction
+      - both

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      medicationrequest_course_of_therapy:
+      - continuous
+      - acute
+      - seasonal

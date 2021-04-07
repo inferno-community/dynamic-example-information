@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      episodeofcare_type:
+      - hacc
+      - pac
+      - diab
+      - da
+      - cacp

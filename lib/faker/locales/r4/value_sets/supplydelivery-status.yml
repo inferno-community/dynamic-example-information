@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      supplydelivery_status:
+      - in-progress
+      - completed
+      - abandoned
+      - entered-in-error

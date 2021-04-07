@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      search_entry_mode:
+      - match
+      - include
+      - outcome

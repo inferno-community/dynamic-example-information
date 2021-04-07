@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      measure_scoring:
+      - proportion
+      - ratio
+      - continuous-variable
+      - cohort

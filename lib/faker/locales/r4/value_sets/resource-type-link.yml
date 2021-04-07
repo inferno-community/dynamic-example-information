@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      resource_type_link:
+      - organization
+      - patient
+      - practitioner
+      - relatedperson

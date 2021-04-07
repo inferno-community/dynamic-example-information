@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      coverageeligibilityresponse_ex_auth_support:
+      - laborder
+      - labreport
+      - diagnosticimageorder
+      - diagnosticimagereport
+      - professionalreport
+      - accidentreport
+      - model
+      - picture

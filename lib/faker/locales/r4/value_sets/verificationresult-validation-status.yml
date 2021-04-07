@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      verificationresult_validation_status:
+      - successful
+      - failed
+      - unknown

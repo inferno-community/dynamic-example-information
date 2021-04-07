@@ -1,0 +1,17 @@
+---
+en:
+  faker:
+    name:
+      organization_type:
+      - prov
+      - dept
+      - team
+      - govt
+      - ins
+      - pay
+      - edu
+      - reli
+      - crs
+      - cg
+      - bus
+      - other

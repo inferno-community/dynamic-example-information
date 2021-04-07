@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      list_mode:
+      - working
+      - snapshot
+      - changes

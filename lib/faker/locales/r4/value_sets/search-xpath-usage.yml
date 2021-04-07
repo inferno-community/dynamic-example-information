@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      search_xpath_usage:
+      - normal
+      - phonetic
+      - nearby
+      - distance
+      - other

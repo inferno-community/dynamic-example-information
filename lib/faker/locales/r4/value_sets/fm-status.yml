@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      fm_status:
+      - active
+      - cancelled
+      - draft
+      - entered-in-error

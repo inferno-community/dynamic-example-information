@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      contract_term_subtype:
+      - condition
+      - warranty
+      - innominate

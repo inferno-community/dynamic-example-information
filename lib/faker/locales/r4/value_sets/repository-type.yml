@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      repository_type:
+      - directlink
+      - openapi
+      - login
+      - oauth
+      - other

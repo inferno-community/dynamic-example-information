@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      verificationresult_push_type_available:
+      - specific
+      - any
+      - source

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      us_core_diagnosticreport_category:
+      - LP29684-5
+      - LP29708-2
+      - LP7839-6

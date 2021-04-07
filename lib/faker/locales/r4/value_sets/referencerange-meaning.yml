@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      referencerange_meaning:
+      - type
+      - endocrine

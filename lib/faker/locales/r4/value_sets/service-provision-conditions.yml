@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      service_provision_conditions:
+      - free
+      - disc
+      - cost

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      list_status:
+      - current
+      - retired
+      - entered-in-error

@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      evidence_quality:
+      - high
+      - moderate
+      - low
+      - very-low

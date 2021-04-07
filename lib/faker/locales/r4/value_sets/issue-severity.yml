@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      issue_severity:
+      - fatal
+      - error
+      - warning
+      - information

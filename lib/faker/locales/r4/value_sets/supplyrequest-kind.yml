@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      supplyrequest_kind:
+      - central
+      - nonstock

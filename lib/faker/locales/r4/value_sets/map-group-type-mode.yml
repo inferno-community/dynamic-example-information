@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      map_group_type_mode:
+      - none
+      - types
+      - type-and-types

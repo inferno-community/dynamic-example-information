@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      claim_exception:
+      - student
+      - disabled

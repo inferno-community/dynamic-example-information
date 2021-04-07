@@ -1,0 +1,18 @@
+---
+en:
+  faker:
+    name:
+      research_subject_status:
+      - candidate
+      - eligible
+      - follow-up
+      - ineligible
+      - not-registered
+      - off-study
+      - on-study
+      - on-study-intervention
+      - on-study-observation
+      - pending-on-study
+      - potential-candidate
+      - screening
+      - withdrawn

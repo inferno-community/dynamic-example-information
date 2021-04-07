@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      verificationresult_need:
+      - none
+      - initial
+      - periodic

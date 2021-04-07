@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      graph_compartment_rule:
+      - identical
+      - matching
+      - different
+      - custom

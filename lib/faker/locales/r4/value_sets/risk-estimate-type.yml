@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      risk_estimate_type:
+      - proportion
+      - derivedProportion
+      - mean
+      - median
+      - count
+      - descriptive

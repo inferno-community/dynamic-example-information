@@ -1,0 +1,36 @@
+---
+en:
+  faker:
+    name:
+      resource_status:
+      - error
+      - proposed
+      - planned
+      - draft
+      - requested
+      - received
+      - declined
+      - accepted
+      - arrived
+      - active
+      - suspended
+      - failed
+      - replaced
+      - complete
+      - inactive
+      - abandoned
+      - unknown
+      - unconfirmed
+      - confirmed
+      - resolved
+      - refuted
+      - differential
+      - partial
+      - busy-unavailable
+      - free
+      - on-target
+      - ahead-of-target
+      - behind-target
+      - not-ready
+      - transduc-discon
+      - hw-discon

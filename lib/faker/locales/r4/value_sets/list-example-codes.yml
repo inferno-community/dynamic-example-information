@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      list_example_codes:
+      - alerts
+      - adverserxns
+      - allergies
+      - medications
+      - problems
+      - worklist
+      - waiting
+      - protocols
+      - plans

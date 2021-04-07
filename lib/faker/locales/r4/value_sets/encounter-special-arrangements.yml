@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      encounter_special_arrangements:
+      - wheel
+      - add-bed
+      - int
+      - att
+      - dog

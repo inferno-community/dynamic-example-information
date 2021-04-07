@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      supplyrequest_reason:
+      - patient-care
+      - ward-stock

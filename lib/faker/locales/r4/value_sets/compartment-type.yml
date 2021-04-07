@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      compartment_type:
+      - Patient
+      - Encounter
+      - RelatedPerson
+      - Practitioner
+      - Device

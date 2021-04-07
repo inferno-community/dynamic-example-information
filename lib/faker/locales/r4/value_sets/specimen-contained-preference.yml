@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      specimen_contained_preference:
+      - preferred
+      - alternate

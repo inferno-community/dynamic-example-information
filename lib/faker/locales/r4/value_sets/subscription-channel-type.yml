@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      subscription_channel_type:
+      - rest-hook
+      - websocket
+      - email
+      - sms
+      - message

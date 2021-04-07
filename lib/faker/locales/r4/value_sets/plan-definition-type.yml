@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      plan_definition_type:
+      - order-set
+      - clinical-protocol
+      - eca-rule
+      - workflow-definition

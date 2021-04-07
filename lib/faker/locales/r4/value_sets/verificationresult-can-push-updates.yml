@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      verificationresult_can_push_updates:
+      - 'yes'
+      - 'no'
+      - undetermined

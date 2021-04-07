@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      structure_definition_kind:
+      - primitive-type
+      - complex-type
+      - resource
+      - logical

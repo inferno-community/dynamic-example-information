@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      medication_status:
+      - active
+      - inactive
+      - entered-in-error

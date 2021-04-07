@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      claim_use:
+      - claim
+      - preauthorization
+      - predetermination

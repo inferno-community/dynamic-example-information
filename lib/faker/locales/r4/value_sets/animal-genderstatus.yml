@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      animal_genderstatus:
+      - neutered
+      - intact
+      - unknown

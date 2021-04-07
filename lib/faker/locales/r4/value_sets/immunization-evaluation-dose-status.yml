@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      immunization_evaluation_dose_status:
+      - valid
+      - notvalid

@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      precision_estimate_type:
+      - CI
+      - IQR
+      - SD
+      - SE

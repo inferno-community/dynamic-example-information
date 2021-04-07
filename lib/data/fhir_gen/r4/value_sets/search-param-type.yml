@@ -1,0 +1,10 @@
+---
+- number
+- date
+- string
+- token
+- reference
+- composite
+- quantity
+- uri
+- special

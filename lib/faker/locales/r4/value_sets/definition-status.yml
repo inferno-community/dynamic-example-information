@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      definition_status:
+      - draft
+      - active
+      - withdrawn
+      - unknown

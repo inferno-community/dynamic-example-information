@@ -1,0 +1,16 @@
+---
+en:
+  faker:
+    name:
+      research_study_status:
+      - active
+      - administratively-completed
+      - approved
+      - closed-to-accrual
+      - closed-to-accrual-and-intervention
+      - completed
+      - disapproved
+      - in-review
+      - temporarily-closed-to-accrual
+      - temporarily-closed-to-accrual-and-intervention
+      - withdrawn

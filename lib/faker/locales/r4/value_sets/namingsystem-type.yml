@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      namingsystem_type:
+      - codesystem
+      - identifier
+      - root

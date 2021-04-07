@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      eligibilityresponse_purpose:
+      - auth-requirements
+      - benefits
+      - discovery
+      - validation

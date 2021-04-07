@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      ex_program_code:
+      - as
+      - hd
+      - auscr
+      - none

@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      service_pharmacy:
+      - smokecess
+      - flushot
+      - drugcost
+      - markup
+      - dispensefee
+      - compoundfee

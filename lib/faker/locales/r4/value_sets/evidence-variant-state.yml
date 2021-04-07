@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      evidence_variant_state:
+      - low-risk
+      - medium-risk
+      - high-risk

@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      subscription_status:
+      - requested
+      - active
+      - error
+      - 'off'

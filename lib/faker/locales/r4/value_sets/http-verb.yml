@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      http_verb:
+      - GET
+      - HEAD
+      - POST
+      - PUT
+      - DELETE
+      - PATCH

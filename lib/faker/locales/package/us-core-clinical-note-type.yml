@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      us_core_clinical_note_type:
+      - 18842-5
+      - 11488-4
+      - 34117-2
+      - 11506-3
+      - 28570-0

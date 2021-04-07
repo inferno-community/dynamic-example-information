@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      history_absent_reason:
+      - subject-unknown
+      - withheld
+      - unable-to-obtain
+      - deferred

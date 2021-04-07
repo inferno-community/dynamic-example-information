@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      resource_validation_mode:
+      - create
+      - update
+      - delete
+      - profile

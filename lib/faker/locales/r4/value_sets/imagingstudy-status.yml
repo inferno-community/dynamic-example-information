@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      imagingstudy_status:
+      - registered
+      - available
+      - cancelled
+      - entered-in-error
+      - unknown

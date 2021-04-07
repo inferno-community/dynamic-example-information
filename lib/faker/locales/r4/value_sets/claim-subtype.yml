@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      claim_subtype:
+      - ortho
+      - emergency

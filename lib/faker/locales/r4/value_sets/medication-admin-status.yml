@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      medication_admin_status:
+      - in-progress
+      - not-done
+      - on-hold
+      - completed
+      - entered-in-error
+      - stopped
+      - unknown

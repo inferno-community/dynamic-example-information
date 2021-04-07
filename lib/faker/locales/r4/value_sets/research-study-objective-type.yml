@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      research_study_objective_type:
+      - primary
+      - secondary
+      - exploratory

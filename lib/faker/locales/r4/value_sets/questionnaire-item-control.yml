@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      questionnaire_item_control:
+      - group
+      - text
+      - question

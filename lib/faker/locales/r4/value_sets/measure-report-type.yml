@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      measure_report_type:
+      - individual
+      - subject-list
+      - summary
+      - data-collection

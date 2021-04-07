@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      conditional_delete_status:
+      - not-supported
+      - single
+      - multiple

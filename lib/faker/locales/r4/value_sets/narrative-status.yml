@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      narrative_status:
+      - generated
+      - extensions
+      - additional
+      - empty

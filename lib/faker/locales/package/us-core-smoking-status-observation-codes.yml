@@ -1,0 +1,6 @@
+---
+en:
+  faker:
+    name:
+      us_core_smoking_status_observation_codes:
+      - 72166-2

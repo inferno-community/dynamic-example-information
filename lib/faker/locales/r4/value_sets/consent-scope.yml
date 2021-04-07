@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      consent_scope:
+      - adr
+      - research
+      - patient-privacy
+      - treatment

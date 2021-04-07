@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      medicationknowledge_characteristic:
+      - imprintcd
+      - size
+      - shape
+      - color
+      - coating
+      - scoring
+      - logo

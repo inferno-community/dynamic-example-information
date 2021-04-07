@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      condition_ver_status:
+      - unconfirmed
+      - confirmed
+      - refuted
+      - entered-in-error

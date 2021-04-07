@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      list_order:
+      - user
+      - system
+      - event-date
+      - entry-date
+      - priority
+      - alphabetic
+      - category
+      - patient

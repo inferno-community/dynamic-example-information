@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      provenance_agent_role:
+      - enterer
+      - performer
+      - author
+      - verifier
+      - attester
+      - informant
+      - custodian
+      - assembler
+      - composer

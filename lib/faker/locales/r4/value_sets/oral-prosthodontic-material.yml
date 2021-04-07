@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      oral_prosthodontic_material:
+      - '1'
+      - '2'
+      - '3'
+      - '4'

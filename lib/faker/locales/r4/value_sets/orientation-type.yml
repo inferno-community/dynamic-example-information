@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      orientation_type:
+      - sense
+      - antisense

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      adverse_event_causality_method:
+      - ProbabilityScale
+      - Bayesian
+      - Checklist

@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      event_status:
+      - preparation
+      - in-progress
+      - not-done
+      - on-hold
+      - stopped
+      - completed
+      - entered-in-error
+      - unknown

@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      appointment_cancellation_reason:
+      - pat
+      - prov
+      - maint
+      - meds-inc
+      - other

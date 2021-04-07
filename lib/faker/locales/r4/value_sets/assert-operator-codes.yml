@@ -1,0 +1,16 @@
+---
+en:
+  faker:
+    name:
+      assert_operator_codes:
+      - equals
+      - notEquals
+      - in
+      - notIn
+      - greaterThan
+      - lessThan
+      - empty
+      - notEmpty
+      - contains
+      - notContains
+      - eval

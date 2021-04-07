@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      condition_category:
+      - problem-list-item
+      - encounter-diagnosis

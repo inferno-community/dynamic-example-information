@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      encounter_type:
+      - ADMS
+      - BD/BM-clin
+      - CCS60
+      - OKI

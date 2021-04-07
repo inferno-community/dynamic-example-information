@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      implant_status:
+      - functional
+      - non-functional
+      - disabled
+      - unknown

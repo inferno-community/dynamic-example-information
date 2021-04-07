@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      contact_point_use:
+      - home
+      - work
+      - temp
+      - old
+      - mobile

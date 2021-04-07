@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      property_representation:
+      - xmlAttr
+      - xmlText
+      - typeAttr
+      - cdaText
+      - xhtml

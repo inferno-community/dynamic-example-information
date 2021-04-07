@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      adjudication_reason:
+      - ar001
+      - ar002

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      response_code:
+      - ok
+      - transient-error
+      - fatal-error

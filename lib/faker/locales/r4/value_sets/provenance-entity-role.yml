@@ -1,0 +1,6 @@
+---
+en:
+  faker:
+    name:
+      provenance_entity_role:
+      - derivation

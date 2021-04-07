@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      adverse_event_causality_assess:
+      - Certain
+      - Probably-Likely
+      - Possible
+      - Unlikely
+      - Conditional-Classified
+      - Unassessable-Unclassifiable

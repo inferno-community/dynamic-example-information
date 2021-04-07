@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      standards_status:
+      - draft
+      - normative
+      - trial-use
+      - informative
+      - deprecated
+      - external

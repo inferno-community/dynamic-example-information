@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      document_mode:
+      - producer
+      - consumer

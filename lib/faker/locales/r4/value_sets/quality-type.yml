@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      quality_type:
+      - indel
+      - snp
+      - unknown

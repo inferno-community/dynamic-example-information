@@ -1,0 +1,6 @@
+---
+en:
+  faker:
+    name:
+      coverage_selfpay:
+      - pay

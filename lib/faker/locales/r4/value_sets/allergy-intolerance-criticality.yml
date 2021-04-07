@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      allergy_intolerance_criticality:
+      - low
+      - high
+      - unable-to-assess

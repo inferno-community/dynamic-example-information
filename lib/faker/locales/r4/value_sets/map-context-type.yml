@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      map_context_type:
+      - type
+      - variable

@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      ex_diagnosisrelatedgroup:
+      - '100'
+      - '101'
+      - '300'
+      - '400'

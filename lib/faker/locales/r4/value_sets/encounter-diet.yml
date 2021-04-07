@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      encounter_diet:
+      - vegetarian
+      - dairy-free
+      - nut-free
+      - gluten-free
+      - vegan
+      - halal
+      - kosher

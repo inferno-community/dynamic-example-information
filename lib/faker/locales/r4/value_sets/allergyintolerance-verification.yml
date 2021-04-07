@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      allergyintolerance_verification:
+      - unconfirmed
+      - confirmed
+      - refuted
+      - entered-in-error

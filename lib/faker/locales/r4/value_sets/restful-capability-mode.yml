@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      restful_capability_mode:
+      - client
+      - server

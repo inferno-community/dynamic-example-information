@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      device_definition_status:
+      - active
+      - inactive
+      - entered-in-error
+      - unknown

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      linkage_type:
+      - source
+      - alternate
+      - historical

@@ -1,0 +1,6 @@
+---
+en:
+  faker:
+    name:
+      question_max_occurs:
+      - "*"

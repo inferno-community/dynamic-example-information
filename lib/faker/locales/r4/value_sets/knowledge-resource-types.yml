@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      knowledge_resource_types:
+      - ActivityDefinition
+      - CodeSystem
+      - ConceptMap
+      - Library
+      - Measure
+      - PlanDefinition
+      - StructureDefinition
+      - StructureMap
+      - ValueSet

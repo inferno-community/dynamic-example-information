@@ -1,0 +1,15 @@
+---
+en:
+  faker:
+    name:
+      appointmentstatus:
+      - proposed
+      - pending
+      - booked
+      - arrived
+      - fulfilled
+      - cancelled
+      - noshow
+      - entered-in-error
+      - checked-in
+      - waitlist

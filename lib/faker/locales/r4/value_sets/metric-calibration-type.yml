@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      metric_calibration_type:
+      - unspecified
+      - offset
+      - gain
+      - two-point

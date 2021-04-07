@@ -1,0 +1,9 @@
+---
+- online
+- paused
+- standby
+- offline
+- not-ready
+- transduc-discon
+- hw-discon
+- 'off'

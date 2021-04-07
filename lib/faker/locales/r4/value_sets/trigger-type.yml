@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      trigger_type:
+      - named-event
+      - periodic
+      - data-changed
+      - data-accessed
+      - data-access-ended

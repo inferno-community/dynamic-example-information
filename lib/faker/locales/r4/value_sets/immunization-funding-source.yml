@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      immunization_funding_source:
+      - private
+      - public

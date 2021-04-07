@@ -1,0 +1,15 @@
+---
+en:
+  faker:
+    name:
+      guide_parameter_code:
+      - apply
+      - path-resource
+      - path-pages
+      - path-tx-cache
+      - expansion-parameter
+      - rule-broken-links
+      - generate-xml
+      - generate-json
+      - generate-turtle
+      - html-template

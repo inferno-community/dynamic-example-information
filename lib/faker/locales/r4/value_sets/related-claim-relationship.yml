@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      related_claim_relationship:
+      - prior
+      - associated

@@ -1,0 +1,13 @@
+---
+- missing
+- exact
+- contains
+- not
+- text
+- in
+- not-in
+- below
+- above
+- type
+- identifier
+- ofType

@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      history_status:
+      - partial
+      - completed
+      - entered-in-error
+      - health-unknown

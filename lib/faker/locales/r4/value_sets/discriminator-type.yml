@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      discriminator_type:
+      - value
+      - exists
+      - pattern
+      - type
+      - profile

@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      relation_type:
+      - triggers
+      - is-replaced-by

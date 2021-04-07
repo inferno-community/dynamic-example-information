@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      episode_of_care_status:
+      - planned
+      - waitlist
+      - active
+      - onhold
+      - finished
+      - cancelled
+      - entered-in-error

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      report_result_codes:
+      - pass
+      - fail
+      - pending

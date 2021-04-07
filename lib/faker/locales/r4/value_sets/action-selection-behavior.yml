@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      action_selection_behavior:
+      - any
+      - all
+      - all-or-none
+      - exactly-one
+      - at-most-one
+      - one-or-more

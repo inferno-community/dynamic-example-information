@@ -1,0 +1,16 @@
+---
+en:
+  faker:
+    name:
+      surface:
+      - M
+      - O
+      - I
+      - D
+      - B
+      - V
+      - L
+      - MO
+      - DO
+      - DI
+      - MOD

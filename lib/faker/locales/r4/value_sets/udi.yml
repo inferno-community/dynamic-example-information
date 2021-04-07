@@ -1,0 +1,6 @@
+---
+en:
+  faker:
+    name:
+      udi:
+      - gudid

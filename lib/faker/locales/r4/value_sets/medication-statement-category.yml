@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      medication_statement_category:
+      - inpatient
+      - outpatient
+      - community
+      - patientspecified

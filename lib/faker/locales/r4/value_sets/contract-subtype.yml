@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      contract_subtype:
+      - disclosure-ca
+      - disclosure-us

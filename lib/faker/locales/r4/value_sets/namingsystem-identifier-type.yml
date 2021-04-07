@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      namingsystem_identifier_type:
+      - oid
+      - uuid
+      - uri
+      - other

@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      metric_operational_status:
+      - 'on'
+      - 'off'
+      - standby
+      - entered-in-error

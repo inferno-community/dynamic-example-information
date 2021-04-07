@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      metric_color:
+      - black
+      - red
+      - green
+      - yellow
+      - blue
+      - magenta
+      - cyan
+      - white

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      note_type:
+      - display
+      - print
+      - printoper

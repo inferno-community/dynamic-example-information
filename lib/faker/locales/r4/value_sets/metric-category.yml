@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      metric_category:
+      - measurement
+      - setting
+      - calculation
+      - unspecified

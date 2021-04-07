@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      choice_list_orientation:
+      - horizontal
+      - vertical

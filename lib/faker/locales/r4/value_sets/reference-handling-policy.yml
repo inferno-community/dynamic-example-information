@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      reference_handling_policy:
+      - literal
+      - logical
+      - resolves
+      - enforced
+      - local

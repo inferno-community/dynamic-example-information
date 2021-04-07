@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      ex_payee_resource_type:
+      - organization
+      - patient
+      - practitioner
+      - relatedperson

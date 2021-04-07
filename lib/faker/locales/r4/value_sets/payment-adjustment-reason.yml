@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      payment_adjustment_reason:
+      - a001
+      - a002

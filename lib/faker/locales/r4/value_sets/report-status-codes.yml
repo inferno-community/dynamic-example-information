@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      report_status_codes:
+      - completed
+      - in-progress
+      - waiting
+      - stopped
+      - entered-in-error

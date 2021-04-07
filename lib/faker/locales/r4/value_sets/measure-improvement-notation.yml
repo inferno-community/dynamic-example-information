@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      measure_improvement_notation:
+      - increase
+      - decrease

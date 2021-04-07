@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      omb_ethnicity_category:
+      - 2135-2
+      - 2186-5

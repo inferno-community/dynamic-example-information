@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      goal_relationship_type:
+      - predecessor
+      - successor
+      - replacement
+      - milestone
+      - other

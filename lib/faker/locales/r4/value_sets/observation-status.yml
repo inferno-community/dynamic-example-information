@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      observation_status:
+      - registered
+      - preliminary
+      - final
+      - amended
+      - cancelled
+      - entered-in-error
+      - unknown

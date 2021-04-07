@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      capability_statement_kind:
+      - instance
+      - capability
+      - requirements

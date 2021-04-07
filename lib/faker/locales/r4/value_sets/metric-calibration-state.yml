@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      metric_calibration_state:
+      - not-calibrated
+      - calibration-required
+      - calibrated
+      - unspecified

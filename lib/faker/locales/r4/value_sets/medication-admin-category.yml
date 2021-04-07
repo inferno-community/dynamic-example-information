@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      medication_admin_category:
+      - inpatient
+      - outpatient
+      - community

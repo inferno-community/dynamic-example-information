@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      verificationresult_communication_method:
+      - manual
+      - portal
+      - pull
+      - push

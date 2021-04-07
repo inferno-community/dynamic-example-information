@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      guidance_response_status:
+      - success
+      - data-requested
+      - data-required
+      - in-progress
+      - failure
+      - entered-in-error

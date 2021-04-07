@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      endpoint_status:
+      - active
+      - suspended
+      - error
+      - 'off'
+      - entered-in-error
+      - test

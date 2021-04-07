@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      immunization_subpotent_reason:
+      - partial
+      - coldchainbreak
+      - recall

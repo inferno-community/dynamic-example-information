@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      participantrequired:
+      - required
+      - optional
+      - information-only

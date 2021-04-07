@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      missing_tooth_reason:
+      - e
+      - c
+      - u
+      - o

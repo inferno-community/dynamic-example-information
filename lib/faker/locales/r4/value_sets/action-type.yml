@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      action_type:
+      - create
+      - update
+      - remove
+      - fire-event

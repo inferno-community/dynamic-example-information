@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      action_grouping_behavior:
+      - visual-group
+      - logical-group
+      - sentence-group

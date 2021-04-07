@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      message_reason_encounter:
+      - admit
+      - discharge
+      - absent
+      - return
+      - moved
+      - edit

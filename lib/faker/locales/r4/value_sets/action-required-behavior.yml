@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      action_required_behavior:
+      - must
+      - could
+      - must-unless-documented

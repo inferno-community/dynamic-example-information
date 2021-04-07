@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      definition_topic:
+      - treatment
+      - education
+      - assessment

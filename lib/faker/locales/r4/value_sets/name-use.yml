@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      name_use:
+      - usual
+      - official
+      - temp
+      - nickname
+      - anonymous
+      - old

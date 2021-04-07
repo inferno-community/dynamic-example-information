@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      immunization_program_eligibility:
+      - ineligible
+      - uninsured

@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      organization_role:
+      - provider
+      - agency
+      - research
+      - payer
+      - diagnostics
+      - supplier
+      - HIE/HIO
+      - member

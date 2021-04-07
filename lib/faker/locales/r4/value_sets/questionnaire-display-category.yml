@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      questionnaire_display_category:
+      - instructions
+      - security
+      - help

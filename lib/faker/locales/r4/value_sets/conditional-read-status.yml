@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      conditional_read_status:
+      - not-supported
+      - modified-since
+      - not-match
+      - full-support

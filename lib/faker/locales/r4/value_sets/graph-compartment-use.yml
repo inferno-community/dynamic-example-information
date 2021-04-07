@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      graph_compartment_use:
+      - condition
+      - requirement

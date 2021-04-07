@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      search_comparator:
+      - eq
+      - ne
+      - gt
+      - lt
+      - ge
+      - le
+      - sa
+      - eb
+      - ap

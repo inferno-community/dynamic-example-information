@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      encounter_location_status:
+      - planned
+      - active
+      - reserved
+      - completed

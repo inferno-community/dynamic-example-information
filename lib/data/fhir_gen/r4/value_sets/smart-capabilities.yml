@@ -1,0 +1,15 @@
+---
+- launch-ehr
+- launch-standalone
+- client-public
+- client-confidential-symmetric
+- sso-openid-connect
+- context-passthrough-banner
+- context-passthrough-style
+- context-ehr-patient
+- context-ehr-encounter
+- context-standalone-patient
+- context-standalone-encounter
+- permission-offline
+- permission-patient
+- permission-user

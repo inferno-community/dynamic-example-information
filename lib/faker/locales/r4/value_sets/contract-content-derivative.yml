@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      contract_content_derivative:
+      - registration
+      - retrieval
+      - statement
+      - shareable

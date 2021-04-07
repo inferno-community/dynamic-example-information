@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      certainty_subcomponent_type:
+      - RiskOfBias
+      - Inconsistency
+      - Indirectness
+      - Imprecision
+      - PublicationBias
+      - DoseResponseGradient
+      - PlausibleConfounding
+      - LargeEffect

@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      condition_state:
+      - active
+      - inactive
+      - resolved

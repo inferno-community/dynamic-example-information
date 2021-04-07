@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      codesystem_content_mode:
+      - not-present
+      - example
+      - fragment
+      - complete
+      - supplement
