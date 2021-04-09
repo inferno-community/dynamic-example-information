@@ -42,7 +42,7 @@ Project to generate example information dynamically based on a HL7 FHIR implemen
 10. Support for related attributes. Example: If telecom.system == SMS, then telecom.text should = Faker::Phone.number. This would require attributes have awareness of their siblings and their values.
 
 # Setting up Ruby
-1. (Install Rbenv)[https://github.com/rbenv/rbenv] - This is a common version manager
+1. (Install Rbenv)[https://github.com/rbenv/rbenv] - This is a common Ruby version manager
 2. Install Ruby 2.7.2, set it as your default version, and install bundler (package manager for ruby).
     ```
     rbenv install 2.7.2
@@ -56,7 +56,15 @@ Project to generate example information dynamically based on a HL7 FHIR implemen
     ```
 
 4. Clone this repository and navigate into the lib folder.
+    ```
+    git clone https://github.com/inferno-community/dynamic-example-information.git
+    cd dynamic-example-information
+    ```
 5. Now you should be able to run 'ruby fhir_gen.rb' and see a bunch of stuff print out.
+    ```
+    cd lib
+    ruby fhir_gen.rb
+    ```
 
 ## Tips
 
