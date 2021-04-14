@@ -1,82 +1,56 @@
 # dynamic-example-information
 Project to generate example information dynamically based on a HL7 FHIR implementation guide!
 
-
-# Structure
-
-1. data: This directory contains any raw data sources that have been getting used during development. Currently this includes the us-core and R4 full specifications.
-2. faker/locales: This directory contains the YAML files used to populate Faker's values. The way we are loading our values into Faker currently is functional, but a bit hacky and could be improved:
-    1. Faker relies on Rails I18n (internationalization) API. The way this project is loading right now requires that we reload I18n after we require faker.
-    2. Faker should be letting us add new top level namespaces, but it was not working for me. Right now *every* fake list of values we have is namespaced under Name (ex: Faker::Name.administrative_gender).
-        1. Preferably we want to be able to add our own namespaces, (ex: Faker::Fhir.administrative_gender)
-3. fhir_gen.rb - This is the entry point for the application. We'll want to wrap this in a rake task later, for now you can look at the bottom of the file for which Resource your loading.
-```ruby
-  # Running the app
-  ruby fhir_gen.rb
+# Running the App
+We currently have 3 rake tasks.
 ```
-4. structure_defition.rb - This class wraps up a single structure (Patient). Everything we build is attached to one of these.
-5. field_set.rb - This class does all the real work of building our resource's structure. We attach one of these to the structure_defintion.example attribute, and that fieldset recursively adds more fieldsets to itself as necessary. (see comments in this file for more detail).
-6. field.rb - This class represents a terminal value in our example. Each field object has all of the data associated with a single snapshot element, and the value we decided to use as our fake data. All the logic for picking some fake data is currently in here.
+# Task 1 - Single resource usage
+rake fhir_gen:test[patient]
+
+# Task 2 - Multi-Resource usage (untested)
+rake fhir_gen:us_core_set[patient,encounter]
+
+# Task 3 - Full Spec usage (currently disabled)
+rake fhir_gen:run_all
+```
+
+# Directories
+
+1. lib: App code
+2. lib/data: Contains any raw data sources that have been getting used during development. Includes: us-core and R4 full spec.
+3. lib/faker/locales: Contains the YAML files used to populate Faker's values.
+4. examples: Output for JSON representation of the created example. Current out is in the "pretty format".
+5. logs: Logs any values that the application failed to fake.
+
+# Class Files
+1. fhir_gen.rb: Entry point for application
+2. tasks.rake: CLI definitions for running the application.
+3. structure_defition.rb - Wraps up a single resource example. StructureDefinition's always have 1 Fieldset.
+4. field_set.rb - Does all the real work of building our resource's structure. Fieldsets have 0..* other fieldsets & fields.
+5. field.rb - This class represents a terminal atomic value in our example. Has all of the data associated with a single snapshot element, and the value we decided to use as our fake data. All the logic for picking some fake data is currently in here.
 
 # TODO:
 1. Use [https://github.com/onc-healthit/inferno/blob/82c5f12cc9b9a199e0595afc8efc18cae36dc349/lib/tasks/tasks.rake#L836](https://github.com/onc-healthit/inferno/blob/82c5f12cc9b9a199e0595afc8efc18cae36dc349/lib/tasks/tasks.rake#L836) to load ValueSets and potentially other types into our Faker directory.
 
-2. Add something to handle complex DataTypes that appear as terminal values (this tricks our app a bit right now)
+2. Parse profile-types.json from R4 and incorporate it into the FieldSet's structure building process.
     1. Example: [Period](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient-definitions.html#Patient.telecom.period)
 
-3. Add support for CodeableConcept
-    1. This should be similar how we'll handle normal Codes (ValueSets).
+3. Convert objects back into valid FHIR JSON. FieldSet#to_h method currently gets us to JSON.
+    1. This can either be a post-process method in StructureDefintion (see StructureDefintion#write_example) OR our FieldSet/Fields need to know how to present themselves.
 
-4. Convert this application to run as a rake task.
+4. Review Logs and add new methods/YAML files for faking
+    1. Run the program on a random resource and look for what it failed and why. This might be as simple as writing a YAML file or method that samples an array of choices.
 
-5. Add support for control over the number of examples created (do this after it runs as a rake task).
+5. Support for extensions.
 
-6. Convert objects back into valid FHIR JSON. Fieldset#to_h method currently gets us close.
+6. Improve the quality of fake values. Review the examples we generate and see how we can make them better.
+    1. This could be a single value looks bad (maybe a quantity should be limited to a range)
+    2. Related values! Maybe we have an end date before a start date. I added sibling/parent awareness to these objects for this.
+    
+# Ruby Tips
 
-7. Add additional methods for picking other simple values based on type (string, integer, uri), or values we want to rely on a special method for instead of Faker. Might be a good idea to move these types of methods to their own module or class.
+1. Add a binding.pry anywhere in the code to stop execution and take a look.
+    1. 'exit' will continue execution
+    2. 'send :exit' will completely stop execution
 
-8. Lockdown the logic around picking a fake value. This logic is a bit messy right now and it is very important for the team to understand, see Field#set_value.
-
-9. Support for extensions.
-
-10. Support for related attributes. Example: If telecom.system == SMS, then telecom.text should = Faker::Phone.number. This would require attributes have awareness of their siblings and their values.
-
-# Setting up Ruby
-1. (Install Rbenv)[https://github.com/rbenv/rbenv] - This is a common Ruby version manager
-2. Install Ruby 2.7.2, set it as your default version, and install bundler (package manager for ruby).
-    ```
-    rbenv install 2.7.2
-    rbenv global 2.7.2
-    gem install bundler
-    ```
-3. Manually install required libraries (we'll add a single file to handle this for us later)
-    ```
-    gem install faker
-    gem install pry
-    ```
-
-4. Clone this repository and navigate into the lib folder.
-    ```
-    git clone https://github.com/inferno-community/dynamic-example-information.git
-    cd dynamic-example-information
-    ```
-5. Now you should be able to run 'ruby fhir_gen.rb' and see a bunch of stuff print out.
-    ```
-    cd lib
-    ruby fhir_gen.rb
-    ```
-
-## Tips
-
-Obviously I can't cover all syntax differences, but I'll at least mention basic debugging/printing stuff.
-
-1. Debugging
-    1. You can add 'binding.pry' anywhere in the code to insert a debugger.
-        1. If you want the process to continue after a pry just type 'exit'
-        2. If you want to completely stop the process type 'send :exit'
-
-2. Printing
-    1. If you want to print something you can use either print, puts, or pp. Puts automatically includes a line ending, pp (pretty print) adds a bunch of nice formatting. Generally when debugging I use pp.
-    ```ruby
-      pp some_variable
-    ```
+2. Run 'bundle install' after a pull if you are having dependency issues. I added a Gemfile, which is the equivalent of a requirements.txt
