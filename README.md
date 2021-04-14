@@ -2,7 +2,7 @@
 Project to generate example information dynamically based on a HL7 FHIR implementation guide!
 
 # Running the App
-We currently have 3 rake tasks.
+We currently have 3 rake tasks. Use these to run code. You might need to run 'bundle install' first.
 ```
 # Task 1 - Single resource usage
 rake fhir_gen:test[patient]
@@ -53,4 +53,4 @@ rake fhir_gen:run_all
     1. 'exit' will continue execution
     2. 'send :exit' will completely stop execution
 
-2. Run 'bundle install' after a pull if you are having dependency issues. I added a Gemfile, which is the equivalent of a requirements.txt
+2. Run 'bundle install' after a pull if you are having dependency issues. I added a Gemfile, which is the equivalent of a requirements.txt.
