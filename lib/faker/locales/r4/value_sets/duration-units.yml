@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      duration_units:
+      - ms
+      - s
+      - min
+      - h
+      - d
+      - wk
+      - mo
+      - a

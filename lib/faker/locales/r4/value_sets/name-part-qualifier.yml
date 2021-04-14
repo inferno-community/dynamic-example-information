@@ -1,0 +1,16 @@
+---
+en:
+  faker:
+    name:
+      name_part_qualifier:
+      - LS
+      - AC
+      - NB
+      - PR
+      - HON
+      - BR
+      - AD
+      - SP
+      - MID
+      - CL
+      - IN

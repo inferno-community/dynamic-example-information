@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      example_supplement:
+      - chol-mmol
+      - chol-mass
+      - chol

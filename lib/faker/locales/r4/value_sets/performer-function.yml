@@ -1,0 +1,19 @@
+---
+en:
+  faker:
+    name:
+      performer_function:
+      - TRANS
+      - PART
+      - ATND
+      - CON
+      - AUT
+      - INF
+      - ENT
+      - WIT
+      - PPRF
+      - SPRF
+      - RESP
+      - VRF
+      - AUTHEN
+      - LA

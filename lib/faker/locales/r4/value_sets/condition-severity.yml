@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      condition_severity:
+      - '24484000'
+      - '6736007'
+      - '255604002'

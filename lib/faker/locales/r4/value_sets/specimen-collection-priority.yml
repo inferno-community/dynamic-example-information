@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      specimen_collection_priority:
+      - '1'
+      - '2'
+      - '3'
+      - '4'
+      - '5'
+      - '6'
+      - '7'

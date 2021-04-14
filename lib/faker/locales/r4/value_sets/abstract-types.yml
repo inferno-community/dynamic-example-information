@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      abstract_types:
+      - Type
+      - Any

@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      immunization_recommendation_reason:
+      - '77176002'
+      - '77386006'

@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      distance_units:
+      - nm
+      - um
+      - mm
+      - m
+      - km

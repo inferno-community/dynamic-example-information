@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      example:
+      - chol-mmol
+      - chol-mass
+      - chol

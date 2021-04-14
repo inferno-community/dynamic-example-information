@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      example_extensional:
+      - 14647-2
+      - 2093-3
+      - 35200-5
+      - 9342-7

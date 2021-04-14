@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      encounter_participant_type:
+      - translator
+      - emergency

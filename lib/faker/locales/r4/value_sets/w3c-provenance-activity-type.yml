@@ -1,0 +1,17 @@
+---
+en:
+  faker:
+    name:
+      w3c_provenance_activity_type:
+      - Generation
+      - Usage
+      - Communication
+      - Start
+      - End
+      - Invalidation
+      - Derivation
+      - Revision
+      - Quotation
+      - Primary-Source
+      - Attribution
+      - Collection

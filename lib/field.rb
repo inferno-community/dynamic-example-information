@@ -7,7 +7,7 @@ I18n.reload!
 module FhirGen
   class Field
 
-    attr_accessor :name, :full_name, :data, :value, :type, :value_set
+    attr_accessor :name, :full_name, :data, :value, :type, :value_set, :parent
 
     # Represents a terminal node in a resource's attribute listing. Terminal nodes must return atomic values (ex: A string, an integer, etc.)
     #
@@ -18,71 +18,69 @@ module FhirGen
     # == Returns:
     # The @value that is faked for this Field
     #
-    def initialize name:, full_name:, data:
+    def initialize name:, full_name:, data:, parent:
       @name = name
       @full_name = full_name
       @data = data
-      @type = data["type"].first["code"]
+      @parent = parent
+      set_type
 
       @value = set_value
 
       print "Faking value for #{@full_name}, "
-
     end
 
     # Key Examples
     # full_name = Patient.identifier.system
-    #   full_key => Patient_identifier_system
-    #   sub_key => identifier_system
+    # full_key => Patient_identifier_system
+    # sub_key => identifier_system
 
-    # Check if this field has a valueset associated with it, use that if it does. (TODO: This should check if the type is a Code)
-    # Check if we have explitly written a yaml file for this resource_type + value (Patient.identifier.use)
-    # Check if we have a yaml file just for this datatype (identifier.use)
-    # Check if we have method for this type (#uri)
-    # TODO: Improve our fallback. We should log this field object into some kind of TODO folder maybe.
+    # This method is called when we decide on a fake value.
+    # It follows these operations until one is successful
+    # 1. Check for a YAML file to support this attribute (Faker accesses these and picks a value at random)
+    # 2. Check for a method to support this attribute (we write these, see #address_city)
+    # 3. Check for a method to support this attribute type (see #string, #uri)
+    # 4. We have failed to fake a value, log it in log/missing_values.log
     def set_value
-      faker_full_key = "faker.name.#{@full_name.downcase}"
-      faker_sub_key = "faker.name.#{@full_name.downcase.split(".").last(2).join(".")}"
-      
-      full_key = @full_name.gsub(".", "_").downcase
-      sub_key = @full_name.split(".").last(2).join("_").downcase
-      
-      # Check for ValueSet
-      if valueset_url = @data.dig("binding", "valueSet")
-        valueset_name = underscore(valueset_url.split("/").last)
-        
-        if I18n.exists? "faker.name.#{valueset_name}"
-          Faker::Name.send valueset_name
-        else
-          nil
-        end
+      # Field has a link to some special valueset, the URL might give us the key to the ValueSet
+      valueset_url = @data.dig("binding", "valueSet")
+      valueset_key = valueset_url ? underscore(valueset_url.split("/").last) : nil
 
-      # TODO: Check for CodeableConcept
+      # Generate some keys using the fields identifier. We'll use this to look for a YAML file or a method.
+      # Example: "Patient.identifier.use"
+      #   fullname_key => "patient_identifier_use"
+      #   shortname_key => "identifier_use"
+      fullname_key = underscore(@full_name.downcase)
+      shortname_key = underscore(@full_name.downcase.split(".").last(2).join("_"))
 
-      # Check for explicit fake options based on full name
-      elsif I18n.exists? "faker.name.#{faker_full_key}"
-        Faker::Name.send faker_full_key
+      if faker_has_key? valueset_key
+        Faker::Name.send valueset_key
 
-      # Check for explicit fake options based on subset of name (last 2)
-      elsif I18n.exists? "faker.name.#{faker_sub_key}"
-        Faker::Name.send faker_sub_key
+      elsif faker_has_key? fullname_key
+        Faker::Name.send fullname_key
+
+      elsif faker_has_key? shortname_key
+        Faker::Name.send shortname_key
 
       # Check for application specific mapping to the full key
-      elsif self.respond_to? full_key
-        self.send full_key
+      elsif self.respond_to? fullname_key
+        self.send fullname_key
 
-      # Check for application specific mapping to the sub key
-      elsif self.respond_to? sub_key
-        self.send sub_key
+      # Check for application specific mapping to the short key
+      elsif self.respond_to? shortname_key
+        self.send shortname_key
 
-      # Check for general mapping for the type
-      # @type = uri
-      
       elsif self.respond_to?(@type)
         self.send @type
+
       else
+        add_to_log
         "fail2fake"
       end
+    end
+
+    def address_city
+      Faker::Address.city
     end
 
     def boolean
@@ -101,6 +99,20 @@ module FhirGen
       Faker::Lorem.word
     end
 
+    # Returns all other attributes in this field set
+    def siblings
+      @parent._attribute_keys.reject { |ak| ak == @name }.map { |ak| @parent.send(ak) }
+    end
+
+    # Checks if Faker has the existing key.
+    # Convenience method for adding the faker.name prefix
+    # I18n.exists?(nil) will return true, need the upfront check
+    def faker_has_key? key
+      key.nil? ? nil : I18n.exists?("faker.name.#{key}")
+    end
+
+    # Replaces any white space or delimiter characters with underscores
+    # Example: "Hi::My-name_is_James" => "Hi_My_name_is_James"
     def underscore(str)
       str = str.gsub(/::/, '/').
                 gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2').
@@ -109,7 +121,21 @@ module FhirGen
                 downcase
     end
 
+    def set_type
+      type = @data["type"].first
+      if type.has_key?("extension") && type["extension"].first.has_key?("valueUrl")
+        @type = type["extension"].first["valueUrl"]
+      else
+        @type  = type["code"]
+      end
+    end
 
-    
+    # Looks up parent objects until it finds the StructureDefintion object. Adds the failed fake attribute to the log queue.
+    def add_to_log
+      sd = self
+      sd = sd.parent until sd.is_a?(StructureDefinition)
+      sd.queue_for_log field_name: @full_name
+    end
+
   end
 end

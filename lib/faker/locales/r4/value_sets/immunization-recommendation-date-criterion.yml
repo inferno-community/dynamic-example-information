@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      immunization_recommendation_date_criterion:
+      - 30981-5
+      - 30980-7
+      - 59777-3
+      - 59778-1

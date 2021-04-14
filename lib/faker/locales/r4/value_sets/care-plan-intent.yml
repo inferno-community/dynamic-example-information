@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      care_plan_intent:
+      - proposal
+      - plan
+      - order
+      - option

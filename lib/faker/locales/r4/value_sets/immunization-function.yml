@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      immunization_function:
+      - OP
+      - AP

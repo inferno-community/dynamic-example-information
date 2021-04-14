@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      immunization_status:
+      - completed
+      - entered-in-error
+      - not-done

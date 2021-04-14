@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      provenance_history_agent_type:
+      - AUT
+      - INF
+      - VRF
+      - ENT

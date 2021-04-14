@@ -1,0 +1,27 @@
+---
+en:
+  faker:
+    name:
+      feeding_device:
+      - standard-nipple
+      - preemie-nipple
+      - ortho-nipple
+      - sloflo-nipple
+      - midflo-nipple
+      - bigcut-nipple
+      - haberman-bottle
+      - sippy-valve
+      - sippy-no-valve
+      - provale-cup
+      - glass-lid
+      - handhold-cup
+      - rubber-mat
+      - straw
+      - nose-cup
+      - scoop-plate
+      - utensil-holder
+      - foam-handle
+      - angled-utensil
+      - spout-cup
+      - autofeeding-device
+      - rocker-knife

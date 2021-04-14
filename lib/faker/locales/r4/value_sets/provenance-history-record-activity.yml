@@ -1,0 +1,19 @@
+---
+en:
+  faker:
+    name:
+      provenance_history_record_activity:
+      - CREATE
+      - UPDATE
+      - DELETE
+      - ABORT
+      - HOLD
+      - RELEASE
+      - CANCEL
+      - ACTIVATE
+      - SUSPEND
+      - RESUME
+      - COMPLETE
+      - NULLIFY
+      - OBSOLETE
+      - REACTIVATE

@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      enteral_route:
+      - PO
+      - EFT
+      - ENTINSTL
+      - GT
+      - NGT
+      - OGT
+      - GJT
+      - JJTINSTL
+      - OJJ

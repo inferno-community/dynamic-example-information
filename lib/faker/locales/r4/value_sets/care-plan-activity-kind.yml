@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      care_plan_activity_kind:
+      - Appointment
+      - CommunicationRequest
+      - DeviceRequest
+      - MedicationRequest
+      - NutritionOrder
+      - Task
+      - ServiceRequest
+      - VisionPrescription

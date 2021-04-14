@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      extra_activity_type:
+      - aggregate
+      - compose
+      - label

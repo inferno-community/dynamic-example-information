@@ -1,0 +1,6 @@
+---
+en:
+  faker:
+    name:
+      provenance_activity_type:
+      - LA

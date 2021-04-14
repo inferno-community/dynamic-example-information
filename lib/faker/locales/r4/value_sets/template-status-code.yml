@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      template_status_code:
+      - draft
+      - pending
+      - active
+      - review
+      - cancelled
+      - rejected
+      - retired
+      - terminated

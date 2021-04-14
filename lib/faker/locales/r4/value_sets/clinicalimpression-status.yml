@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      clinicalimpression_status:
+      - in-progress
+      - completed
+      - entered-in-error

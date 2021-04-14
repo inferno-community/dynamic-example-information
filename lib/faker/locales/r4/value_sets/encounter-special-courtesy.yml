@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      encounter_special_courtesy:
+      - EXT
+      - NRM
+      - PRF
+      - STF
+      - VIP

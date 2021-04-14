@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      media_modality:
+      - diagram
+      - fax
+      - scan
+      - retina
+      - fingerprint
+      - iris
+      - palm
+      - face

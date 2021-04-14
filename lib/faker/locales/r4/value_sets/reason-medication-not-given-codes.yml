@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      reason_medication_not_given_codes:
+      - a
+      - b
+      - c
+      - d

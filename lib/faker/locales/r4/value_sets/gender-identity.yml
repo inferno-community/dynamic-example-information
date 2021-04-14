@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      gender_identity:
+      - male
+      - female
+      - non-binary
+      - transgender-male
+      - transgender-female
+      - other
+      - non-disclose

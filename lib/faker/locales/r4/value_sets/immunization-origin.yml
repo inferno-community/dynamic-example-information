@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      immunization_origin:
+      - provider
+      - record
+      - recall
+      - school

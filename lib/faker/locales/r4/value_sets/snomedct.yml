@@ -1,0 +1,89 @@
+---
+en:
+  faker:
+    name:
+      snomedct:
+      - inactive
+      - definitionStatusId
+      - parent
+      - child
+      - moduleId
+      - normalForm
+      - normalFormTerse
+      - Due to
+      - Associated with
+      - Associated morphology
+      - Has specimen
+      - Specimen source morphology
+      - Specimen source topography
+      - Specimen source identity
+      - Specimen procedure
+      - Part of
+      - Has active ingredient
+      - Subject of information
+      - Causative agent
+      - Associated finding
+      - Component
+      - Severity
+      - Occurrence
+      - Episodicity
+      - Technique
+      - Revision status
+      - Units
+      - After
+      - Access
+      - Method
+      - Priority
+      - Clinical course
+      - Laterality
+      - Associated procedure
+      - Finding site
+      - Laterality
+      - Direct morphology
+      - Direct substance
+      - Has focus
+      - Has intent
+      - Procedure site
+      - Has definitional manifestation
+      - Indirect morphology
+      - Indirect device
+      - Has interpretation
+      - Interprets
+      - Measurement method
+      - Property
+      - Recipient category
+      - Scale type
+      - Specimen substance
+      - Time aspect
+      - Pathological process
+      - Procedure site - Direct
+      - Procedure site - Indirect
+      - Procedure device
+      - Procedure morphology
+      - Finding context
+      - Procedure context
+      - Temporal context
+      - Subject relationship context
+      - Route of administration
+      - Has dose form
+      - Finding method
+      - Finding informer
+      - Using device
+      - Using energy
+      - Using substance
+      - Surgical approach
+      - Using access device
+      - Role group
+      - Property type
+      - Inheres in
+      - Towards
+      - Characterizes
+      - Process agent
+      - Process duration
+      - Process output
+      - Relative to
+      - Precondition
+      - Direct site
+      - Specified by
+      - Observes
+      - Is about

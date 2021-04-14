@@ -1,0 +1,17 @@
+---
+en:
+  faker:
+    name:
+      ucum_vitals_common:
+      - "%"
+      - cm
+      - "[in_i]"
+      - kg
+      - g
+      - "[lb_av]"
+      - Cel
+      - "[degF]"
+      - mm[Hg]
+      - "/min"
+      - kg/m2
+      - m2

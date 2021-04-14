@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      name_v3_representation:
+      - ABC
+      - IDE
+      - SYL

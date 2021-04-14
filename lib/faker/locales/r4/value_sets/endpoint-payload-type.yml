@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      endpoint_payload_type:
+      - any
+      - none

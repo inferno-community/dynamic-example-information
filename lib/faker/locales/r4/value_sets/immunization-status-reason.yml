@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      immunization_status_reason:
+      - IMMUNE
+      - MEDPREC
+      - OSTOCK
+      - PATOBJ

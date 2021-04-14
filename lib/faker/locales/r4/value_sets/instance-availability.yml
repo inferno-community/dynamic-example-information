@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      instance_availability:
+      - ONLINE
+      - OFFLINE
+      - NEARLINE
+      - UNAVAILABLE

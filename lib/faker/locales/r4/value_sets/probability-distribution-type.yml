@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      probability_distribution_type:
+      - B
+      - E
+      - F
+      - G
+      - LN
+      - N
+      - T
+      - U
+      - X2

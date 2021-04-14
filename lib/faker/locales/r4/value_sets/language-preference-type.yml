@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      language_preference_type:
+      - verbal
+      - written

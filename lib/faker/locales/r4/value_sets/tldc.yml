@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      tldc:
+      - draft
+      - pending
+      - active
+      - review
+      - cancelled
+      - rejected
+      - retired
+      - terminated

@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      system_restful_interaction:
+      - transaction
+      - batch
+      - search-system
+      - history-system

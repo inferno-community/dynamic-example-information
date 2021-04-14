@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      consent_category:
+      - acd
+      - dnr
+      - emrgonly
+      - hcd
+      - npp
+      - polst
+      - research
+      - rsdid
+      - rsreid

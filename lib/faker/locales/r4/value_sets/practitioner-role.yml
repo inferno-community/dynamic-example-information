@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      practitioner_role:
+      - doctor
+      - nurse
+      - pharmacist
+      - researcher
+      - teacher
+      - ict

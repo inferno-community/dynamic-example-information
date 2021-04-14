@@ -1,0 +1,17 @@
+---
+en:
+  faker:
+    name:
+      event_timing:
+      - MORN
+      - MORN.early
+      - MORN.late
+      - NOON
+      - AFT
+      - AFT.early
+      - AFT.late
+      - EVE
+      - EVE.early
+      - EVE.late
+      - NIGHT
+      - PHS

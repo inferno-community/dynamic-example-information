@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      ucum_bodytemp:
+      - Cel
+      - "[degF]"

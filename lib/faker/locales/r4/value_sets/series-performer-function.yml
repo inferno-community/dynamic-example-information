@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      series_performer_function:
+      - CON
+      - VRF
+      - PRF
+      - SPRF
+      - REF

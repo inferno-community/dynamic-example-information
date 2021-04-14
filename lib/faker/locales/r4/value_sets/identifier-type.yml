@@ -1,0 +1,23 @@
+---
+en:
+  faker:
+    name:
+      identifier_type:
+      - DL
+      - PPN
+      - BRN
+      - MR
+      - MCN
+      - EN
+      - TAX
+      - NIIP
+      - PRN
+      - MD
+      - DR
+      - ACSN
+      - UDI
+      - SNO
+      - SB
+      - PLAC
+      - FILL
+      - JHN

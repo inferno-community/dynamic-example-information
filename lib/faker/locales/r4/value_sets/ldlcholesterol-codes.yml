@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      ldlcholesterol_codes:
+      - 18262-6
+      - 13457-7

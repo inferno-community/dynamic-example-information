@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      bodysite_laterality:
+      - '419161000'
+      - '419465000'
+      - '51440002'

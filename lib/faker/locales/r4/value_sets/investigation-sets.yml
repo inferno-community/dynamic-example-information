@@ -1,0 +1,7 @@
+---
+en:
+  faker:
+    name:
+      investigation_sets:
+      - '271336007'
+      - '160237006'

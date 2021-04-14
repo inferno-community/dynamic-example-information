@@ -1,0 +1,6 @@
+---
+en:
+  faker:
+    name:
+      condition_stage_type:
+      - '261023001'

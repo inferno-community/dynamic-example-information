@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      device_action:
+      - implanted
+      - explanted
+      - manipulated

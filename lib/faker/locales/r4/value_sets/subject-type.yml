@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      subject_type:
+      - Patient
+      - Practitioner
+      - Organization
+      - Location
+      - Device

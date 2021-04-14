@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      questionnaireresponse_mode:
+      - ELECTRONIC
+      - VERBAL
+      - WRITTEN

@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      immunization_route:
+      - IDINJ
+      - IM
+      - NASINHLC
+      - IVINJ
+      - PO
+      - SQ
+      - TRNSDERM

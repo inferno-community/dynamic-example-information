@@ -1,0 +1,8 @@
+---
+en:
+  faker:
+    name:
+      ucum_bodyweight:
+      - kg
+      - "[lb_av]"
+      - g

@@ -3,7 +3,7 @@ require 'pry'
 module FhirGen
   class FieldSet
 
-    attr_accessor :elements, :_attribute_keys
+    attr_accessor :elements, :_attribute_keys, :snapshot, :parent
 
     # FieldSet objects do the heavy lifting of constructing a resources structure. An attribute is for every element/node in the snapshot.
     # See add_attributes_from_snapshot for detail.
@@ -30,15 +30,16 @@ module FhirGen
     # == Returns:
     # N/A
     #
-    def initialize name:, full_name:, snapshot:, example_mode: :random, n_examples_ceiling: 3
-      @_snapshot = snapshot
+    def initialize name:, full_name:, snapshot:, example_mode: :random, n_examples_ceiling: 3, parent:
+      @snapshot = snapshot
       @_name = name
       @_full_name = full_name
       @_example_mode = example_mode
       @_n_examples_ceiling = n_examples_ceiling
+      @parent = parent
 
       @_attribute_keys = []
-      add_attributes_from_snapshot if @_snapshot
+      add_attributes_from_snapshot if @snapshot
     end
 
     # Processes the elements in the snapshot until their are none left. First check cardinality, then check type. This method recursively builds more FieldSet objects ontop of this one when it reaches any attribute that is not a terminal attribute/node.
@@ -60,7 +61,8 @@ module FhirGen
     # N/A
     #
     def add_attributes_from_snapshot
-      while node = @_snapshot.shift do
+      while node = @snapshot.shift do
+
         full_name = node["id"]
         node_name = full_name.split(".").last
 
@@ -87,16 +89,16 @@ module FhirGen
         add_attribute(attr_name: node_name, attr_val: attr_val)
 
         child_nodes = []
-        @_snapshot.delete_if { |ss_element| child_nodes << ss_element if ss_element["id"].start_with?("#{full_name}.") }
+        @snapshot.delete_if { |ss_element| child_nodes << ss_element if ss_element["id"].start_with?("#{full_name}.") }
 
         if child_nodes.any?
 
           n_examples.times do
-            fieldset = FieldSet.new name: node_name, full_name: full_name, snapshot: child_nodes.dup
+            fieldset = FieldSet.new name: node_name, full_name: full_name, snapshot: child_nodes.dup, parent: self
             fill_attribute node_name: node_name, obj: fieldset
           end
         else
-          field = Field.new name: node_name, full_name: full_name, data: node
+          field = Field.new name: node_name, full_name: full_name, data: node, parent: self
           fill_attribute node_name: node_name, obj: field
         end
 
@@ -122,7 +124,7 @@ module FhirGen
     end
 
     private
-    
+
     # Dynamically adds an attribute to this instance of the StructureDefinition.
     # Example:
     # sd = StructureDefinition.new

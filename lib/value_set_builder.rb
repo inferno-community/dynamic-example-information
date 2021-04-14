@@ -14,15 +14,28 @@ module FhirGenBuilder
       
       json_data = JSON.parse(File.read(source_file))
       json_data["entry"].each do |entry|
-        value_set_url = entry.dig("resource","valueSet")
-        next if value_set_url.nil?
+        name = entry["fullUrl"].split("/").last
+        type = entry.dig("resource", "resourceType")
         
+        next unless type == "CodeSystem" or type == "ValueSet"
+        
+        resource = entry.dig("resource")
         options = { 'en' => { 'faker' => { 'name' => {} }}}
-        name = value_set_url.split("/").last
         filename = name + ".yml"
 
-        options['en']['faker']['name'][self.underscore(name)] = entry.dig("resource","concept").map do |option_data| 
-          option_data["code"]
+        if type == "CodeSystem"
+          option_data = resource.dig("concept")
+          if option_data.nil?
+            option_data = resource.dig("property")
+          end
+
+        elsif type == "ValueSet"
+          option_data = resource.dig("compose", "include")[0]["concept"]
+        end
+
+        next if option_data.nil?
+        options['en']['faker']['name'][self.underscore(name)] = option_data.map do |od|
+          od["code"]
         end
 
         File.open("#{out_dir}#{filename}", "w+") { |f| f.write(options.to_yaml) }
@@ -68,5 +81,5 @@ module FhirGenBuilder
   end
 end
 
-# FhirGenBuilder::ValueSetBuilder.add_r4_to_faker
+FhirGenBuilder::ValueSetBuilder.add_r4_to_faker
 # FhirGenBuilder::ValueSetBuilder.look_for_other_igs

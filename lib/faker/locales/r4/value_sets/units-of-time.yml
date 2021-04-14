@@ -1,0 +1,12 @@
+---
+en:
+  faker:
+    name:
+      units_of_time:
+      - s
+      - min
+      - h
+      - d
+      - wk
+      - mo
+      - a

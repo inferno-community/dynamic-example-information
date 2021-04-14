@@ -1,0 +1,18 @@
+---
+en:
+  faker:
+    name:
+      example_hierarchical:
+      - invalid
+      - structure
+      - required
+      - value
+      - processing
+      - duplicate
+      - not-found
+      - conflict
+      - lock
+      - exception
+      - tbrottled
+      - login
+      - unknown

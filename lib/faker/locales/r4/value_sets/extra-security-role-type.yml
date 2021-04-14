@@ -1,0 +1,10 @@
+---
+en:
+  faker:
+    name:
+      extra_security_role_type:
+      - authserver
+      - datacollector
+      - dataprocessor
+      - datasubject
+      - humanuser

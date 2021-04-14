@@ -1,0 +1,13 @@
+---
+en:
+  faker:
+    name:
+      postal_address_use:
+      - BAD
+      - CONF
+      - HP
+      - HV
+      - DIR
+      - PUB
+      - PHYS
+      - PST

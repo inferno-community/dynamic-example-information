@@ -1,0 +1,32 @@
+---
+en:
+  faker:
+    name:
+      iso_21089_lifecycle:
+      - access
+      - hold
+      - amend
+      - archive
+      - attest
+      - decrypt
+      - deidentify
+      - deprecate
+      - destroy
+      - disclose
+      - encrypt
+      - extract
+      - link
+      - merge
+      - originate
+      - pseudonymize
+      - reactivate
+      - receive
+      - reidentify
+      - unhold
+      - report
+      - restore
+      - transform
+      - transmit
+      - unlink
+      - unmerge
+      - verify

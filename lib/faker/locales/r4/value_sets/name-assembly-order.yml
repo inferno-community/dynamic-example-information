@@ -1,0 +1,9 @@
+---
+en:
+  faker:
+    name:
+      name_assembly_order:
+      - NL1
+      - NL2
+      - NL3
+      - NL4

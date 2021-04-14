@@ -1,0 +1,11 @@
+---
+en:
+  faker:
+    name:
+      age_units:
+      - min
+      - h
+      - d
+      - wk
+      - mo
+      - a

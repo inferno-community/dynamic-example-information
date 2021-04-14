@@ -1,0 +1,15 @@
+---
+en:
+  faker:
+    name:
+      participation_role_type:
+      - AMENDER
+      - COAUTH
+      - CONT
+      - EVTWIT
+      - PRIMAUTH
+      - REVIEWER
+      - SOURCE
+      - TRANS
+      - VALID
+      - VERF

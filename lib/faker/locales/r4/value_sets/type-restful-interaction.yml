@@ -1,0 +1,14 @@
+---
+en:
+  faker:
+    name:
+      type_restful_interaction:
+      - read
+      - vread
+      - update
+      - patch
+      - delete
+      - history-instance
+      - history-type
+      - create
+      - search-type
