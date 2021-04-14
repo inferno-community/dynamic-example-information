@@ -41,9 +41,11 @@ rake fhir_gen:run_all
 4. Review Logs and add new methods/YAML files for faking
     1. Run the program on a random resource and look for what it failed and why. This might be as simple as writing a YAML file or method that samples an array of choices.
 
-5. Support for extensions.
+5. Support for CodeableConcepts - Currently we treat these as normal "Codes" and do a simple fake from their ValueSet.
 
-6. Improve the quality of fake values. Review the examples we generate and see how we can make them better.
+6. Support for extensions.
+
+7. Improve the quality of fake values. Review the examples we generate and see how we can make them better.
     1. This could be a single value looks bad (maybe a quantity should be limited to a range)
     2. Related values! Maybe we have an end date before a start date. I added sibling/parent awareness to these objects for this.
     
