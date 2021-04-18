@@ -3,8 +3,10 @@ require 'json'
 
 module FhirGen
   class StructureDefinition
-    attr_accessor :source, :json_data, :resource_name, :field_set, :example, :mv_log
+    
+    attr_accessor :source, :json_data, :resource_name, :field_set, :example, :mv_log, :snapshot, :failures, :successes
 
+    TYPE_BLACKLIST = ["Extension", "Reference"]
 
     # Builds a complex object from an Implementation Guide's structure definition JSON file
     # The JSON file MUST have a 'snapshot' key
@@ -22,13 +24,82 @@ module FhirGen
     def initialize source:, example_rank: 1
       @source = source
       @example_rank = example_rank
-      @json_data = JSON.parse(File.read(@source))
-      @mv_log = []
+      @failures, @successes = [], []
 
-      # Snapshot Elements seem more complete?
+      if File.exist? @source
+        @json_data = JSON.parse(File.read(@source))
+      else
+        puts "FILE NOT FOUND #{@source}"
+        return
+      end
       snapshot = @json_data.dig("snapshot", "element").dup
       @resource_name = @json_data["type"]
-      @example = FieldSet.new(name: @resource_name, full_name: @resource_name, snapshot: snapshot, parent: self)
+
+      # Look for complex data types to add into the snapshot.
+      snapshot_with_types = clean_snapshot snapshot
+
+      @example = FieldSet.new(name: @resource_name, full_name: @resource_name, snapshot: snapshot_with_types, parent: self)
+    end
+
+    def get_stats
+      { successes: @successes.uniq.size, 
+        failures: @failures.uniq.size, 
+        pct:(@successes.uniq.size.to_f / (@failures.uniq.size+@successes.uniq.size))}
+    end
+
+    # Returns a list of snapshot elements representing a standard complex data type.
+    # Removes nodes that we aren't ready/wanting to handle
+    # The process of adding in data type nodes would be better suited to FieldSet, but we were having bugs with parsing the JSON files during the run.
+    def clean_snapshot snapshot
+      snapshot_dt_clean = false
+      until snapshot_dt_clean do
+        snapshot_dt_clean, snapshot = replace_complex_datatypes snapshot
+      end
+      snapshot
+    end
+
+    def replace_complex_datatypes snapshot
+      new_ss = []
+      snapshot_dt_clean = true
+
+      snapshot.each do |node|
+        node_name = node["id"]
+        next if node["type"].nil?
+        node_type = node["type"].first["code"]
+        if TYPE_BLACKLIST.include?(node_type) || node_name.include?(":")
+          next
+        end
+
+
+        # Snapshot defines the children, leave it be.
+        if snapshot.detect { |ss_e| ss_e["id"].start_with?("#{node_name}.") }
+          new_ss << node
+          next
+        end
+
+        fp = "lib/extracts/complex_types/#{node_type}.json"
+        if !File.exist?(fp)
+          new_ss << node
+        else
+          snapshot_dt_clean = false
+          data_type = JSON.parse(File.read(fp))
+          type_nodes = data_type.dig("resource", "snapshot", "element").map do |c_node|
+            prefix = node_name.split(".")[0..-2].join(".")
+            c_node["id"] = "#{prefix}.#{c_node['id'].downcase}"
+            
+            if !c_node.has_key?("type")
+              c_node["type"] = [{"code" => node_type}]
+            end
+            c_node
+          end
+          type_nodes.each { |nss| new_ss << nss }
+        end
+      end
+      [snapshot_dt_clean, new_ss]
+    end
+
+    def name
+      @resource_name
     end
 
     # Replace this with a delegate if we include ActiveSupport
@@ -47,16 +118,22 @@ module FhirGen
 
     # Field name is a string representing some field we failed to parse.
     # Queues it up for a single log write after the example creation process is complete
-    def queue_for_log field_name:
-      @mv_log << field_name
+    def add_failure field_name:
+      @failures << field_name
+    end
+
+    # Field name is a string representing some field we failed to parse.
+    # Queues it up for a single log write after the example creation process is complete
+    def add_success field_name:
+      @successes << field_name
     end
 
     # Write everyting in the @mv_log list to a file with todays date.
     # Writes one log file per resource, and replaces said file each run.
-    def write_mv_log
-      puts "\n\nFailed to fake #{@mv_log.uniq.size} values for #{@resource_name}"
+    def write_failure_log
+      puts "\n\nFailed to fake #{@failures.uniq.size} values for #{@resource_name}"
       File.open("log/#{Date.today.to_s}_#{@resource_name}_mv.log", "w+") do |f|
-        @mv_log.uniq.each { |field_name| f.puts("#{Time.now.to_s}: #{field_name}") }
+        @failures.uniq.each { |field_name| f.puts("#{Time.now.to_s}: #{field_name}") }
       end
     end
 

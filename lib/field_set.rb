@@ -1,9 +1,13 @@
 require 'pry'
+require 'json'
 
 module FhirGen
   class FieldSet
 
     attr_accessor :elements, :_attribute_keys, :snapshot, :parent
+
+    # These attributes are blacklisted because we eiter don't want them in examples, or because they interfere with an existing method. Ruby objects all have a display method.
+    ATTR_BLACKLIST = ['display', 'hash']
 
     # FieldSet objects do the heavy lifting of constructing a resources structure. An attribute is for every element/node in the snapshot.
     # See add_attributes_from_snapshot for detail.
@@ -53,7 +57,7 @@ module FhirGen
     # Full Example:: 
     #   We have reached the snapshot element "Patient.name". It has cardinality 1..*, so we will set self.name = [] to support 1 to Many.
     #   This node has decendant nodes, such as Patient.name.use and Patient.name.text, which means this node is not terminal.
-    #   Since it is not terminal we'll be creating FieldSet object(s) here. In this case some random number of them between 1 and 3.
+    #   Since it is not terminal we'll be creating FieldSet object(s) here. In this case some random number of them between 1 and 3 (our system-wide ceiling).
     #   The new FieldSet objects will process those descendant nodes and keep pushing down to terminal values (Fields) or new FieldSets.
     #   self.name is now [FieldSet1, FieldSet2...], where each FieldSet is an object with the attributes for a HumanName's top level nodes.
     #
@@ -65,7 +69,6 @@ module FhirGen
 
         full_name = node["id"]
         node_name = full_name.split(".").last
-
         if node["type"].nil?
           puts "Node with id #{full_name} skipped for no type"
           next
@@ -74,15 +77,15 @@ module FhirGen
         node_type = node["type"].first["code"]
         cardinality = get_cardinality(min: node["min"], max: node["max"])
         n_examples = get_n_examples(cardinality: cardinality)
-        
-        # Not ready for extensions yet
-        next if node_type == "Extension"
+
+        # Blacklisted attributes
+        next if ATTR_BLACKLIST.include? node_name.downcase
 
         # Cardinality 0..1.size => 2
         # Need to use size to properly compare cardinality.size => Infinite
         attr_val = (cardinality.size) > 2 ? [] : nil
 
-        # The attribute has multiple type options. We should randomly pick one, for now just using #1
+        # The attribute has multiple type options. We should randomly pick one, but we are just taking the first option.
         if node_name.include? "[x]"
           node_name = node_name.gsub("[x]","") + node_type[0].upcase + node_type[1..-1]
         end
@@ -91,8 +94,13 @@ module FhirGen
         child_nodes = []
         @snapshot.delete_if { |ss_element| child_nodes << ss_element if ss_element["id"].start_with?("#{full_name}.") }
 
-        if child_nodes.any?
+        # If there are no children for this node, check for a complex data type.
+        # This will set child nodes to a new set of snapshot elements, or []
+        # if child_nodes.empty?
+        #   child_nodes = get_data_type_nodes(node_type)
+        # end
 
+        if child_nodes.any?
           n_examples.times do
             fieldset = FieldSet.new name: node_name, full_name: full_name, snapshot: child_nodes.dup, parent: self
             fill_attribute node_name: node_name, obj: fieldset
@@ -117,6 +125,9 @@ module FhirGen
             h[attr_key] << (_attr_val.is_a?(FieldSet) ? _attr_val.to_h : _attr_val.value )
           end
         else
+          # if !attr_val.is_a?(FieldSet) && attr_val.nil?
+          #   binding.pry 
+          # end
           h[attr_key] = (attr_val.is_a?(FieldSet) ? attr_val.to_h : attr_val.value )
         end
       end

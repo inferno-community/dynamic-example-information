@@ -48,7 +48,9 @@ rake fhir_gen:run_all
 7. Improve the quality of fake values. Review the examples we generate and see how we can make them better.
     1. This could be a single value looks bad (maybe a quantity should be limited to a range)
     2. Related values! Maybe we have an end date before a start date. I added sibling/parent awareness to these objects for this.
-    
+
+8. Node Name's with ':' breaking attribute
+
 # Ruby Tips
 
 1. Add a binding.pry anywhere in the code to stop execution and take a look.
@@ -56,3 +58,7 @@ rake fhir_gen:run_all
     2. 'send :exit' will completely stop execution
 
 2. Run 'bundle install' after a pull if you are having dependency issues. I added a Gemfile, which is the equivalent of a requirements.txt.
+
+# Questions for Monday
+1. Endless associations (Identifer -> Reference -> Identifier)
+    1. We can check for repetitive associations ("identifier.reference.identifier" is detectable), or we can blacklist references for now.

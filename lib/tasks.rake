@@ -1,5 +1,6 @@
 require 'pry'
 require_relative 'fhir_gen'
+require_relative 'profile_type_builder'
 
 namespace :fhir_gen do
   IG_DIR = "lib/data/package"
@@ -28,12 +29,13 @@ namespace :fhir_gen do
   # Run FhirGen on all of the us core data
   # Example:
   #   rake fhir_gen:run_all
-  task :run_all do
-    puts "You probably shouldn't be doing this"
-    return true
-    sd_files = Dir.glob("#{IG_DIR}/data/package/StructureDefinition*")
+  # Currently logging is disabled, see FhirGen.run_test for how to add it to FhirGen.run
+  task :run_all do |task, args|
+    sd_files = Dir.glob("#{IG_DIR}/StructureDefinition*")
     FhirGen.run resources: sd_files
   end
-
-
+  
+  task :extract_r4_complex_types do 
+    FhirGenBuilder::ProfileType.extract_r4_complex_types
+  end
 end

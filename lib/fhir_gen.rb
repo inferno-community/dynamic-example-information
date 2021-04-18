@@ -6,17 +6,32 @@ module FhirGen
   require_relative 'field'
 
   def self.run resources: []
+    s, f = 0, 0
+    pct = []
+
     resources.each_with_index do |resource, i|
       puts "Generating example #{i} of #{resources.size}"
       puts "#{resource}...\n"
-      FhirGen::StructureDefinition.new source: resource
+      sd = FhirGen::StructureDefinition.new source: resource
+      stats = sd.get_stats
+      stats.map do |stat|
+        s += stats[:successes]
+        f += stats[:failures]
+        pct << stats[:pct]
+      end
     end
+
+    coverage = (s.to_f / (s+f)).round(2) * 100
+
+    puts "Coverage: #{total_coverage.round(2)}%"
   end
 
   def self.run_test resource:
     sd = FhirGen::StructureDefinition.new source: resource
-    sd.write_mv_log
+    sd.write_failure_log
     sd.write_example
+
+    puts sd.get_stats
   end
 
 end

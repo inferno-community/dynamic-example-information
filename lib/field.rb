@@ -7,7 +7,7 @@ I18n.reload!
 module FhirGen
   class Field
 
-    attr_accessor :name, :full_name, :data, :value, :type, :value_set, :parent
+    attr_accessor :name, :full_name, :data, :value, :type, :value_set, :parent, :sd
 
     # Represents a terminal node in a resource's attribute listing. Terminal nodes must return atomic values (ex: A string, an integer, etc.)
     #
@@ -23,11 +23,11 @@ module FhirGen
       @full_name = full_name
       @data = data
       @parent = parent
+      set_sd
       set_type
 
       @value = set_value
-
-      print "Faking value for #{@full_name}, "
+      @value.nil? ? add_failure : add_success
     end
 
     # Key Examples
@@ -74,8 +74,7 @@ module FhirGen
         self.send @type
 
       else
-        add_to_log
-        "fail2fake"
+        nil
       end
     end
 
@@ -92,6 +91,10 @@ module FhirGen
     end
 
     def date
+      Faker::Date.backward(days: rand(1000)).to_s
+    end
+
+    def dateTime
       Faker::Date.backward(days: rand(1000)).to_s
     end
 
@@ -130,11 +133,19 @@ module FhirGen
       end
     end
 
+    def set_sd
+      @sd = self
+      @sd = sd.parent until sd.is_a?(StructureDefinition)
+    end
+
     # Looks up parent objects until it finds the StructureDefintion object. Adds the failed fake attribute to the log queue.
-    def add_to_log
-      sd = self
-      sd = sd.parent until sd.is_a?(StructureDefinition)
-      sd.queue_for_log field_name: @full_name
+    def add_failure
+      set_sd if @sd.nil?
+      @sd.add_failure field_name: @full_name
+    end
+    def add_success
+      set_sd if @sd.nil?
+      @sd.add_success field_name: @full_name
     end
 
   end
