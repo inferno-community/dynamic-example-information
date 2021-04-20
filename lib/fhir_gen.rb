@@ -23,7 +23,7 @@ module FhirGen
 
     coverage = (s.to_f / (s+f)).round(2) * 100
 
-    puts "Coverage: #{total_coverage.round(2)}%"
+    puts "Coverage: #{coverage.round(2)}%"
   end
 
   def self.run_test resource:

@@ -10,7 +10,6 @@ module FhirGenBuilder
   class ProfileType
 
     def self.extract_r4_complex_types source_file: "lib/data/r4/profiles-types.json", out_dir: "lib/extracts/complex_types/"
-      
       json_data = JSON.parse(File.read(source_file))
       json_data["entry"].each do |entry|
         type = entry.dig("resource", "kind")
