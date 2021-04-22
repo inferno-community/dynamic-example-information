@@ -30,9 +30,12 @@ namespace :fhir_gen do
   # Example:
   #   rake fhir_gen:run_all
   # Currently logging is disabled, see FhirGen.run_test for how to add it to FhirGen.run
-  task :run_all do |task, args|
-    sd_files = Dir.glob("#{IG_DIR}/StructureDefinition*")
-    FhirGen.run resources: sd_files
+  task :run_all, :num_examples, :example_mode do |task, args|
+    num_examples = args[:num_examples] || 1
+    example_mode = args[:example_mode] || :random
+    
+    sd_files = Dir.glob "#{IG_DIR}/StructureDefinition*"
+    FhirGen.run resources: sd_files, num_examples: num_examples.to_i, example_mode: example_mode.to_sym
   end
 
   task :extract_r4_complex_types do 

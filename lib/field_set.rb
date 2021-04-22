@@ -75,14 +75,12 @@ module FhirGen
         node_type = node["type"].first["code"]
         cardinality = get_cardinality(min: node["min"], max: node["max"])
         n_examples = get_n_examples(cardinality: cardinality)
-        
-        # If we selected 0 examples, next node
-        next if n_examples == 0
 
-        # Blacklisted attributes
+        # If we selected 0 examples, cut the children and skip to the next set of nodes
         # Due to the strategy we use, we can't fake attributes that share a name with Ruby's default Object#methods.
-        # This should be resolved by namespacing all attributes during the faking, and then de-namespacing them during example printing
-        if Object.respond_to? node_name.downcase
+        #   This should be resolved by namespacing all attributes during the faking, and then de-namespacing them during example printing.
+        #   We would also need to namespace the methods that fake these values (check for _display, not display)
+        if n_examples == 0 || Object.respond_to?(node_name.downcase)
           @snapshot.delete_if { |ss_element| ss_element["id"].start_with?("#{full_name}.") }
           next
         end

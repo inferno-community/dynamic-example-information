@@ -10,8 +10,10 @@ rake fhir_gen:test[patient]
 # Task 2 - Multi-Resource usage (untested)
 rake fhir_gen:us_core_set[patient,encounter]
 
-# Task 3 - Full Spec usage (currently disabled)
-rake fhir_gen:run_all
+# Task 3 - Full Spec usage [num_examples,example_mode]
+rake fhir_gen:run_all[1,random]
+rake fhir_gen:run_all[1,max]
+rake fhir_gen:run_all[1,min]
 ```
 
 # Directories
@@ -30,26 +32,14 @@ rake fhir_gen:run_all
 5. field.rb - This class represents a terminal atomic value in our example. Has all of the data associated with a single snapshot element, and the value we decided to use as our fake data. All the logic for picking some fake data is currently in here.
 
 # TODO:
-1. Use [https://github.com/onc-healthit/inferno/blob/82c5f12cc9b9a199e0595afc8efc18cae36dc349/lib/tasks/tasks.rake#L836](https://github.com/onc-healthit/inferno/blob/82c5f12cc9b9a199e0595afc8efc18cae36dc349/lib/tasks/tasks.rake#L836) to load ValueSets and potentially other types into our Faker directory.
-
-2. Parse profile-types.json from R4 and incorporate it into the FieldSet's structure building process.
-    1. Example: [Period](http://hl7.org/fhir/us/core/StructureDefinition-us-core-patient-definitions.html#Patient.telecom.period)
-
-3. Convert objects back into valid FHIR JSON. FieldSet#to_h method currently gets us to JSON.
+1. Convert objects back into valid FHIR JSON. FieldSet#to_h method currently gets us to JSON.
     1. This can either be a post-process method in StructureDefintion (see StructureDefintion#write_example) OR our FieldSet/Fields need to know how to present themselves.
 
-4. Review Logs and add new methods/YAML files for faking
-    1. Run the program on a random resource and look for what it failed and why. This might be as simple as writing a YAML file or method that samples an array of choices.
+2. Support for extensions.
 
-5. Support for CodeableConcepts - Currently we treat these as normal "Codes" and do a simple fake from their ValueSet.
+3. Node name's with ':' in them cannot be faked
 
-6. Support for extensions.
-
-7. Improve the quality of fake values. Review the examples we generate and see how we can make them better.
-    1. This could be a single value looks bad (maybe a quantity should be limited to a range)
-    2. Related values! Maybe we have an end date before a start date. I added sibling/parent awareness to these objects for this.
-
-8. Node Name's with ':' breaking attribute
+4. Node name's that share their name with a default Ruby Object method cannot be faked
 
 # Ruby Tips
 
@@ -58,7 +48,3 @@ rake fhir_gen:run_all
     2. 'send :exit' will completely stop execution
 
 2. Run 'bundle install' after a pull if you are having dependency issues. I added a Gemfile, which is the equivalent of a requirements.txt.
-
-# Questions for Monday
-1. Endless associations (Identifer -> Reference -> Identifier)
-    1. We can check for repetitive associations ("identifier.reference.identifier" is detectable), or we can blacklist references for now.

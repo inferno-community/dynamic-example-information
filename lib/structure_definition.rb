@@ -21,10 +21,10 @@ module FhirGen
     # == Returns:
     # A FieldSet object
     #
-    def initialize source:, example_rank: 1
+    def initialize source:, example_mode:, example_num:
       @source = source
-      @example_rank = example_rank
       @failures, @successes = [], []
+      @example_num = example_num
 
       if File.exist? @source
         @json_data = JSON.parse(File.read(@source))
@@ -41,7 +41,7 @@ module FhirGen
       @example = FieldSet.new(name: @resource_name, 
         full_name: @resource_name, 
         snapshot: snapshot_with_types, 
-        example_mode: :max,
+        example_mode: example_mode,
         parent: self
       )
     end
@@ -120,7 +120,7 @@ module FhirGen
     # Use this method to make any adjustments to our hash.
     # If we end up deciding to do some post-processing on our final hash, this is the spot
     def write_example
-      File.open("examples/#{@example_rank}_#{@resource_name}.json", "w+") do |f|
+      File.open("examples/#{@example_num}_#{@resource_name}.json", "w+") do |f|
         f.print JSON.pretty_generate(@example.to_h)
       end
     end

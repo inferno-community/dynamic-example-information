@@ -188,12 +188,16 @@ module FhirGen
     # This will cut that off to form the key to our fake options.
     # Example: "http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1"
     def build_valueset_key
-      if @full_name.end_with?("coding.code") # && @parent.parent.present?
-        valueset_url = @parent.parent.data.dig("binding", "valueSet")
-      else
-        valueset_url = @data.dig("binding", "valueSet")
+      begin
+        if @full_name.end_with?("coding.code") # && @parent.parent.present?
+          valueset_url = @parent.parent.data.dig("binding", "valueSet")
+        else
+          valueset_url = @data.dig("binding", "valueSet")
+        end
+      rescue
+        binding.pry
       end
-      
+
       if valueset_url
         key = underscore(valueset_url.split("/").last)
         return key.include?("|") ? key.split("|")[0] : key
