@@ -47,6 +47,7 @@ module FhirGen
       #   shortest_key => "use"
       fullname_key, shortname_key, shortest_key = build_faker_keys
 
+
       if faker_has_key? valueset_key
         Faker::Name.send valueset_key
 
@@ -67,15 +68,12 @@ module FhirGen
       elsif faker_has_key? shortest_key
         Faker::Name.send shortest_key
 
+      elsif self.respond_to? shortest_key
+          self.send shortest_key
+
       elsif self.respond_to?(@type)
         self.send @type
 
-      elsif self.respond_to? shortest_key
-        begin
-          self.send shortest_key
-        rescue
-          binding.pry
-        end
 
       else
         nil
@@ -98,8 +96,8 @@ module FhirGen
       Faker::Address.state
     end
 
-    def postal_code
-      Faker::Address.postal_code
+    def postalcode
+      Faker::Address.zip_code
     end
 
     def boolean
@@ -188,16 +186,11 @@ module FhirGen
     # This will cut that off to form the key to our fake options.
     # Example: "http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1"
     def build_valueset_key
-      begin
-        if @full_name.end_with?("coding.code") # && @parent.parent.present?
-          valueset_url = @parent.parent.data.dig("binding", "valueSet")
-        else
-          valueset_url = @data.dig("binding", "valueSet")
-        end
-      rescue
-        binding.pry
+      if @full_name.end_with?("coding.code") # && @parent.parent.present?
+        valueset_url = @parent.parent.data.dig("binding", "valueSet")
+      else
+        valueset_url = @data.dig("binding", "valueSet")
       end
-
       if valueset_url
         key = underscore(valueset_url.split("/").last)
         return key.include?("|") ? key.split("|")[0] : key

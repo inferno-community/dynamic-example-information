@@ -177,8 +177,10 @@ module FhirGen
 
     # Placeholder for logic picking random numbers of examples given ranges of cardinality. Currently just picks the ceiling for infinite or random otherwise.
     def get_n_examples cardinality:
-      if cardinality.size.infinite? || @example_mode == :max
+      if cardinality.size.infinite?
         @n_examples_ceiling
+      elsif @example_mode == :max
+        cardinality.size - 1
       elsif @example_mode == :random
         cardinality.to_a.sample
       elsif @example_mode == :min

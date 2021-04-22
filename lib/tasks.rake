@@ -20,7 +20,7 @@ namespace :fhir_gen do
   task :test, [:resource_name] do |task, args|
     file = "#{IG_DIR}/StructureDefinition-us-core-#{args[:resource_name]}.json"
     if File.exist? file
-      FhirGen.run_test resource: file
+      FhirGen.run resources: [file]
     else
       puts "File does not exist: #{file}"
     end
