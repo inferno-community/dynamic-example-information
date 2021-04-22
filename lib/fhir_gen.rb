@@ -13,6 +13,9 @@ module FhirGen
       puts "Generating example #{i} of #{resources.size}"
       puts "#{resource}...\n"
       sd = FhirGen::StructureDefinition.new source: resource
+      sd.write_failure_log
+      sd.write_example
+
       stats = sd.get_stats
       stats.map do |stat|
         s += stats[:successes]
@@ -20,6 +23,7 @@ module FhirGen
         pct << stats[:pct]
       end
     end
+
 
     coverage = (s.to_f / (s+f)).round(2) * 100
 

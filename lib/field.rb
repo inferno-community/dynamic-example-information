@@ -30,11 +30,6 @@ module FhirGen
       @value.nil? ? add_failure : add_success
     end
 
-    # Key Examples
-    # full_name = Patient.identifier.system
-    # full_key => Patient_identifier_system
-    # sub_key => identifier_system
-
     # This method is called when we decide on a fake value.
     # It follows these operations until one is successful
     # 1. Check for a YAML file to support this attribute (Faker accesses these and picks a value at random)
@@ -42,16 +37,15 @@ module FhirGen
     # 3. Check for a method to support this attribute type (see #string, #uri)
     # 4. We have failed to fake a value, log it in log/missing_values.log
     def set_value
-      # Field has a link to some special valueset, the URL might give us the key to the ValueSet
-      valueset_url = @data.dig("binding", "valueSet")
-      valueset_key = valueset_url ? underscore(valueset_url.split("/").last) : nil
+      # Field (or parent of field) has a link to some special valueset, the URL might give us the key to the ValueSet
+      valueset_key = build_valueset_key
 
       # Generate some keys using the fields identifier. We'll use this to look for a YAML file or a method.
       # Example: "Patient.identifier.use"
       #   fullname_key => "patient_identifier_use"
       #   shortname_key => "identifier_use"
-      fullname_key = underscore(@full_name.downcase)
-      shortname_key = underscore(@full_name.downcase.split(".").last(2).join("_"))
+      #   shortest_key => "use"
+      fullname_key, shortname_key, shortest_key = build_faker_keys
 
       if faker_has_key? valueset_key
         Faker::Name.send valueset_key
@@ -70,23 +64,66 @@ module FhirGen
       elsif self.respond_to? shortname_key
         self.send shortname_key
 
+      elsif faker_has_key? shortest_key
+        Faker::Name.send shortest_key
+
       elsif self.respond_to?(@type)
         self.send @type
+
+      elsif self.respond_to? shortest_key
+        begin
+          self.send shortest_key
+        rescue
+          binding.pry
+        end
 
       else
         nil
       end
     end
 
-    def address_city
+    def markdown
+      Faker::Markdown.random
+    end
+
+    def city
       Faker::Address.city
+    end
+
+    def state
+      Faker::Address.state
+    end
+
+    def country
+      Faker::Address.state
+    end
+
+    def postal_code
+      Faker::Address.postal_code
     end
 
     def boolean
       [true, false].sample
     end
 
+    def canonical
+      '<valueSet value="http://hl7.org/fhir/ValueSet/my-valueset|0.8"/>'
+    end
+
+    def instant
+      Faker::Date.backward(days: rand(1000)).strftime("%Y-%M-%d-T%T.%3N%Z")
+    end
+
     def uri
+      Faker::Internet.url
+    end
+
+    def unsignedInt ; positiveInt ; end
+    def positiveInt
+      rand(0..2147483647)
+    end
+
+    def url
       Faker::Internet.url
     end
 
@@ -100,6 +137,14 @@ module FhirGen
 
     def string
       Faker::Lorem.word
+    end
+
+    def id
+      rand(100000)
+    end
+
+    def xhtml
+      "<div>#{Faker::Lorem.words(number: rand(5..10))}</div>"
     end
 
     # Returns all other attributes in this field set
@@ -124,6 +169,37 @@ module FhirGen
                 downcase
     end
 
+    def build_faker_keys
+      if @full_name.end_with? "coding.code"
+        temp_name = @full_name.gsub(".coding.code", "")
+        fullname_key = underscore( temp_name.split(".").join("_") )
+        shortname_key = underscore( temp_name.split(".").last(2).join("_") )
+        shortest_key = underscore( temp_name.split(".").last )
+      else
+        fullname_key = underscore( @full_name.downcase.split(".").join("_") )
+        shortname_key = underscore( @full_name.downcase.split(".").last(2).join("_") )
+        shortest_key = underscore( @full_name.downcase.split(".").last )
+      end
+      
+      [fullname_key, shortname_key, shortest_key]
+    end
+
+    # ValueSet URLs sometimes include a versioning in the URL.
+    # This will cut that off to form the key to our fake options.
+    # Example: "http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1"
+    def build_valueset_key
+      if @full_name.end_with?("coding.code") # && @parent.parent.present?
+        valueset_url = @parent.parent.data.dig("binding", "valueSet")
+      else
+        valueset_url = @data.dig("binding", "valueSet")
+      end
+      
+      if valueset_url
+        key = underscore(valueset_url.split("/").last)
+        return key.include?("|") ? key.split("|")[0] : key
+      end
+    end
+
     def set_type
       type = @data["type"].first
       if type.has_key?("extension") && type["extension"].first.has_key?("valueUrl")
@@ -141,7 +217,7 @@ module FhirGen
     # Looks up parent objects until it finds the StructureDefintion object. Adds the failed fake attribute to the log queue.
     def add_failure
       set_sd if @sd.nil?
-      @sd.add_failure field_name: @full_name
+      @sd.add_failure field_name: "#{@full_name}::#{@type}"
     end
     def add_success
       set_sd if @sd.nil?

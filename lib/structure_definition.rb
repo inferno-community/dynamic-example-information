@@ -38,7 +38,12 @@ module FhirGen
       # Look for complex data types to add into the snapshot.
       snapshot_with_types = clean_snapshot snapshot
 
-      @example = FieldSet.new(name: @resource_name, full_name: @resource_name, snapshot: snapshot_with_types, parent: self)
+      @example = FieldSet.new(name: @resource_name, 
+        full_name: @resource_name, 
+        snapshot: snapshot_with_types, 
+        example_mode: :max,
+        parent: self
+      )
     end
 
     def get_stats
@@ -70,7 +75,6 @@ module FhirGen
           next
         end
 
-
         # Snapshot defines the children, leave it be.
         if snapshot.detect { |ss_e| ss_e["id"].start_with?("#{node_name}.") }
           new_ss << node
@@ -83,15 +87,20 @@ module FhirGen
         else
           snapshot_dt_clean = false
           data_type = JSON.parse(File.read(fp))
+
+          node_idx = 0
           type_nodes = data_type.dig("resource", "snapshot", "element").map do |c_node|
-            prefix = node_name.split(".")[0..-2].join(".")
-            c_node["id"] = "#{prefix}.#{c_node['id'].downcase}"
-            
-            if !c_node.has_key?("type")
-              c_node["type"] = [{"code" => node_type}]
+            node_idx+=1
+            c_node["type"] = [{"code" => node_type}] if !c_node.has_key?("type")
+
+            if node_idx == 1
+              node
+            else
+              c_node["id"] = "#{node_name}.#{c_node['id'].downcase.split(".").last}"
+              c_node
             end
-            c_node
           end
+
           type_nodes.each { |nss| new_ss << nss }
         end
       end

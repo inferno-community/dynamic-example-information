@@ -34,7 +34,7 @@ namespace :fhir_gen do
     sd_files = Dir.glob("#{IG_DIR}/StructureDefinition*")
     FhirGen.run resources: sd_files
   end
-  
+
   task :extract_r4_complex_types do 
     FhirGenBuilder::ProfileType.extract_r4_complex_types
   end

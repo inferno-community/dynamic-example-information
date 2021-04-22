@@ -4,10 +4,7 @@ require 'json'
 module FhirGen
   class FieldSet
 
-    attr_accessor :elements, :_attribute_keys, :snapshot, :parent
-
-    # These attributes are blacklisted because we eiter don't want them in examples, or because they interfere with an existing method. Ruby objects all have a display method.
-    ATTR_BLACKLIST = ['display', 'hash']
+    attr_accessor :elements, :_attribute_keys, :snapshot, :parent, :data
 
     # FieldSet objects do the heavy lifting of constructing a resources structure. An attribute is for every element/node in the snapshot.
     # See add_attributes_from_snapshot for detail.
@@ -34,12 +31,13 @@ module FhirGen
     # == Returns:
     # N/A
     #
-    def initialize name:, full_name:, snapshot:, example_mode: :random, n_examples_ceiling: 3, parent:
+    def initialize name:, full_name:, snapshot:, parent:, example_mode: :random, n_examples_ceiling: 1, data: nil
       @snapshot = snapshot
+      @data = data
       @_name = name
       @_full_name = full_name
-      @_example_mode = example_mode
-      @_n_examples_ceiling = n_examples_ceiling
+      @example_mode = example_mode
+      @n_examples_ceiling = n_examples_ceiling
       @parent = parent
 
       @_attribute_keys = []
@@ -77,11 +75,19 @@ module FhirGen
         node_type = node["type"].first["code"]
         cardinality = get_cardinality(min: node["min"], max: node["max"])
         n_examples = get_n_examples(cardinality: cardinality)
+        
+        # If we selected 0 examples, next node
+        next if n_examples == 0
 
         # Blacklisted attributes
-        next if ATTR_BLACKLIST.include? node_name.downcase
+        # Due to the strategy we use, we can't fake attributes that share a name with Ruby's default Object#methods.
+        # This should be resolved by namespacing all attributes during the faking, and then de-namespacing them during example printing
+        if Object.respond_to? node_name.downcase
+          @snapshot.delete_if { |ss_element| ss_element["id"].start_with?("#{full_name}.") }
+          next
+        end
 
-        # Cardinality 0..1.size => 2
+        # Cardinality 0..1.size = 2
         # Need to use size to properly compare cardinality.size => Infinite
         attr_val = (cardinality.size) > 2 ? [] : nil
 
@@ -99,15 +105,16 @@ module FhirGen
         # if child_nodes.empty?
         #   child_nodes = get_data_type_nodes(node_type)
         # end
-
         if child_nodes.any?
           n_examples.times do
-            fieldset = FieldSet.new name: node_name, full_name: full_name, snapshot: child_nodes.dup, parent: self
+            fieldset = FieldSet.new name: node_name, full_name: full_name, data: node, snapshot: child_nodes, parent: self
             fill_attribute node_name: node_name, obj: fieldset
           end
         else
-          field = Field.new name: node_name, full_name: full_name, data: node, parent: self
-          fill_attribute node_name: node_name, obj: field
+          n_examples.times do
+            field = Field.new name: node_name, full_name: full_name, data: node, parent: self
+            fill_attribute node_name: node_name, obj: field
+          end
         end
 
       end
@@ -125,9 +132,10 @@ module FhirGen
             h[attr_key] << (_attr_val.is_a?(FieldSet) ? _attr_val.to_h : _attr_val.value )
           end
         else
-          # if !attr_val.is_a?(FieldSet) && attr_val.nil?
-          #   binding.pry 
-          # end
+          if !attr_val.is_a?(FieldSet) && attr_val.nil?
+            puts "#{@_full_name} expected value for #{attr_key} in hash, but none found"
+            next
+          end
           h[attr_key] = (attr_val.is_a?(FieldSet) ? attr_val.to_h : attr_val.value )
         end
       end
@@ -171,7 +179,13 @@ module FhirGen
 
     # Placeholder for logic picking random numbers of examples given ranges of cardinality. Currently just picks the ceiling for infinite or random otherwise.
     def get_n_examples cardinality:
-      cardinality.size.infinite? ? @_n_examples_ceiling : cardinality.to_a.sample
+      if cardinality.size.infinite? || @example_mode == :max
+        @n_examples_ceiling
+      elsif @example_mode == :random
+        cardinality.to_a.sample
+      elsif @example_mode == :min
+        cardinality.min
+      end
     end
 
     # Checks if i is a valid number regardless of type. 
