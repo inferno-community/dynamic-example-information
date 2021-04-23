@@ -3,6 +3,7 @@ Project to generate example information dynamically based on a HL7 FHIR implemen
 
 # Running the App
 There is currently a single rake task maintained for running the application.
+Cardinality options are max, min, or random. Max is generally the best option when testing the application.
 ```
 # Running the application across US Core IG, creating 2 examples per resource, using the maximum cardinality allowed (with a ceiling of 3). 'lib/data/uscore' Must contain US Core package.
 rake fhir_gen:run[uscore,2,max]
