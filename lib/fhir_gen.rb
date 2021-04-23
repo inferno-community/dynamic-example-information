@@ -5,18 +5,21 @@ module FhirGen
   require_relative 'field_set'
   require_relative 'field'
 
-  def self.run resources: [], example_mode: :max, num_examples: 1
+  def self.run resources: [], example_mode: :max, num_examples: 1, ig_name:
     s, f = 0, 0
     pct = []
+    total_examples = resources.size * num_examples
 
-    resources.each_with_index do |resource, i|
-      puts "Generating example #{i} of #{resources.size}"
-      puts "#{resource}...\n"
+    puts "\n\nGenerating #{total_examples} examples across #{resources.size} #{ig_name} resources using #{example_mode} cardinality strategy...\n\n"
+
+    resources.each do |resource|
       sd = nil
       num_examples.times do |ex_num|
-        sd = FhirGen::StructureDefinition.new source: resource, example_mode:example_mode, example_num: ex_num+1
+        sd = nil
+        sd = FhirGen::StructureDefinition.new source: resource, example_mode:example_mode, example_num: ex_num+1, ig_name: ig_name
         sd.write_example
       end
+      puts "#{sd.resource_id} (#{num_examples}/#{num_examples})"
       sd.write_failure_log
       stats = sd.get_stats
       stats.map do |stat|
@@ -26,10 +29,13 @@ module FhirGen
       end
     end
 
-
     coverage = (s.to_f / (s+f)).round(2) * 100
-
-    puts "Coverage: #{coverage.round(2)}%"
+    puts "=========================="
+    puts "Success:"
+    puts "#{total_examples} examples can be reviewed in 'examples/#{ig_name}'."
+    puts ""
+    puts "Attribute Coverage: #{coverage.round(2)}%"
+    puts "Attributes that could not be faked can be reviewed in 'log/#{ig_name}'.\n\n"
   end
 
   def self.run_test resource:
@@ -41,12 +47,3 @@ module FhirGen
   end
 
 end
-
-# Use "binding.pry" to debug
-
-# To run this code
-# rake fhir_gen:test[patient]
-
-# Test code to run a patient
-# sd = FhirGen::StructureDefinition.new(source: "data/package/StructureDefinition-us-core-patient.json")
-# pp sd.to_h

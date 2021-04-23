@@ -27,6 +27,7 @@ module FhirGen
       set_type
 
       @value = set_value
+      fix_attr_named_value
       @value.nil? ? add_failure : add_success
     end
 
@@ -47,7 +48,6 @@ module FhirGen
       #   shortest_key => "use"
       fullname_key, shortname_key, shortest_key = build_faker_keys
 
-
       if faker_has_key? valueset_key
         Faker::Name.send valueset_key
 
@@ -60,7 +60,7 @@ module FhirGen
       # Check for application specific mapping to the full key
       elsif self.respond_to? fullname_key
         self.send fullname_key
-
+      
       # Check for application specific mapping to the short key
       elsif self.respond_to? shortname_key
         self.send shortname_key
@@ -68,12 +68,12 @@ module FhirGen
       elsif faker_has_key? shortest_key
         Faker::Name.send shortest_key
 
+      # Ternary here guards against attributes named "value" (which is where we store fakes)
       elsif self.respond_to? shortest_key
           self.send shortest_key
 
       elsif self.respond_to?(@type)
         self.send @type
-
 
       else
         nil
@@ -106,6 +106,10 @@ module FhirGen
 
     def canonical
       '<valueSet value="http://hl7.org/fhir/ValueSet/my-valueset|0.8"/>'
+    end
+
+    def decimal
+      Faker::Number.decimal(l_digits: rand(1..5), r_digits: rand(1..5))
     end
 
     def instant
@@ -186,7 +190,7 @@ module FhirGen
     # This will cut that off to form the key to our fake options.
     # Example: "http://hl7.org/fhir/ValueSet/administrative-gender|4.0.1"
     def build_valueset_key
-      if @full_name.end_with?("coding.code") # && @parent.parent.present?
+      if @full_name.end_with?("coding.code") && @parent.parent.data
         valueset_url = @parent.parent.data.dig("binding", "valueSet")
       else
         valueset_url = @data.dig("binding", "valueSet")
@@ -203,6 +207,12 @@ module FhirGen
         @type = type["extension"].first["valueUrl"]
       else
         @type  = type["code"]
+      end
+    end
+
+    def fix_attr_named_value
+      if @value.nil? && @name == "value"
+        @value = self.send(@type)
       end
     end
 

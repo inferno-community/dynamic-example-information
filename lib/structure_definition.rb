@@ -4,8 +4,9 @@ require 'json'
 module FhirGen
   class StructureDefinition
     
-    attr_accessor :source, :json_data, :resource_name, :field_set, :example, :mv_log, :snapshot, :failures, :successes
+    attr_accessor :source, :json_data, :resource_name, :field_set, :example, :mv_log, :snapshot, :failures, :successes, :resource_id
 
+    # Used during cleaning to exclude these attribute types
     TYPE_BLACKLIST = ["Extension", "Reference"]
 
     # Builds a complex object from an Implementation Guide's structure definition JSON file
@@ -21,10 +22,11 @@ module FhirGen
     # == Returns:
     # A FieldSet object
     #
-    def initialize source:, example_mode:, example_num:
+    def initialize source:, example_mode:, example_num:, ig_name:
       @source = source
       @failures, @successes = [], []
       @example_num = example_num
+      @ig_name = ig_name
 
       if File.exist? @source
         @json_data = JSON.parse(File.read(@source))
@@ -34,6 +36,7 @@ module FhirGen
       end
       snapshot = @json_data.dig("snapshot", "element").dup
       @resource_name = @json_data["type"]
+      @resource_id = @json_data["id"]
 
       # Look for complex data types to add into the snapshot.
       snapshot_with_types = clean_snapshot snapshot
@@ -52,7 +55,7 @@ module FhirGen
         pct:(@successes.uniq.size.to_f / (@failures.uniq.size+@successes.uniq.size))}
     end
 
-    # Returns a list of snapshot elements representing a standard complex data type.
+    # Returns the original snapshot with any complex data types that were not defined inserted into place
     # Removes nodes that we aren't ready/wanting to handle
     # The process of adding in data type nodes would be better suited to FieldSet, but we were having bugs with parsing the JSON files during the run.
     def clean_snapshot snapshot
@@ -63,6 +66,8 @@ module FhirGen
       snapshot
     end
 
+    # Every call to this method will only replace a single 'level' of nodes.
+    # It is continually called by clean_snapshot until the snapshot is unchanged
     def replace_complex_datatypes snapshot
       new_ss = []
       snapshot_dt_clean = true
@@ -100,7 +105,6 @@ module FhirGen
               c_node
             end
           end
-
           type_nodes.each { |nss| new_ss << nss }
         end
       end
@@ -120,7 +124,11 @@ module FhirGen
     # Use this method to make any adjustments to our hash.
     # If we end up deciding to do some post-processing on our final hash, this is the spot
     def write_example
-      File.open("examples/#{@example_num}_#{@resource_name}.json", "w+") do |f|
+      results = @example.to_h
+      results["resourceType"] = @resource_name
+
+      Dir.mkdir("examples/#{@ig_name}") unless File.exist?("examples/#{@ig_name}")
+      File.open("examples/#{@ig_name}/#{@example_num}_#{@resource_id}.json", "w+") do |f|
         f.print JSON.pretty_generate(@example.to_h)
       end
     end
@@ -140,8 +148,8 @@ module FhirGen
     # Write everyting in the @mv_log list to a file with todays date.
     # Writes one log file per resource, and replaces said file each run.
     def write_failure_log
-      puts "\n\nFailed to fake #{@failures.uniq.size} values for #{@resource_name}"
-      File.open("log/#{Date.today.to_s}_#{@resource_name}_mv.log", "w+") do |f|
+      Dir.mkdir("log/#{@ig_name}") unless File.exist?("log/#{@ig_name}")
+      File.open("log/#{@ig_name}/#{Date.today.to_s}_#{@resource_id}_mv.log", "w+") do |f|
         @failures.uniq.each { |field_name| f.puts("#{Time.now.to_s}: #{field_name}") }
       end
     end
