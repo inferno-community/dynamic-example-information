@@ -5,6 +5,8 @@ require 'yaml'
 require 'json'
 
 # TODO: Delete this! Once we are using infernos code to get valuesets and other resources, this should be deprecated
+
+# A general purpose valueset extractor would be a useful addition to this application. #self.look_for_other_igs is a starting point.
 module FhirGenBuilder
   
   class ValueSetBuilder

@@ -1,5 +1,6 @@
 require 'pry'
 require 'json'
+require 'fileutils'
 
 module FhirGen
   class StructureDefinition
@@ -127,9 +128,9 @@ module FhirGen
       results = @example.to_h
       results["resourceType"] = @resource_name
 
-      Dir.mkdir("examples/#{@ig_name}") unless File.exist?("examples/#{@ig_name}")
+      FileUtils.mkdir_p("examples/#{@ig_name}") unless File.exist?("examples/#{@ig_name}")
       File.open("examples/#{@ig_name}/#{@example_num}_#{@resource_id}.json", "w+") do |f|
-        f.print JSON.pretty_generate(@example.to_h)
+        f.print JSON.pretty_generate(results.to_h)
       end
     end
 

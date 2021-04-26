@@ -48,6 +48,8 @@ module FhirGen
       #   shortest_key => "use"
       fullname_key, shortname_key, shortest_key = build_faker_keys
 
+      # Check if Faker has a value for us using one of the three specific keys
+      # Patient.telecom.period.start
       if faker_has_key? valueset_key
         Faker::Name.send valueset_key
 
@@ -93,7 +95,7 @@ module FhirGen
     end
 
     def country
-      Faker::Address.state
+      Faker::Address.country
     end
 
     def postalcode

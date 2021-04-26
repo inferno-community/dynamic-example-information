@@ -32,7 +32,7 @@ rake fhir_gen:run[uscore,2,max]
 
 3. Node name's that share their name with a default Ruby Object method cannot be faked
 
-4. Missing ValueSets (the majority of failed values are codes)
+4. Missing a few ValueSets
 
 # Ruby Tips
 
