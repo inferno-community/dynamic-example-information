@@ -155,6 +155,5 @@ module FhirGen
       end
     end
 
-
   end
 end

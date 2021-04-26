@@ -180,7 +180,7 @@ module FhirGen
       if cardinality.size.infinite?
         @n_examples_ceiling
       elsif @example_mode == :max
-        cardinality.size - 1
+        cardinality.size
       elsif @example_mode == :random
         cardinality.to_a.sample
       elsif @example_mode == :min

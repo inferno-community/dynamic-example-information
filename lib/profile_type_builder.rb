@@ -19,7 +19,6 @@ module FhirGenBuilder
           f.print entry.to_json
         end
 
-
         # snapshot_elements = entry.dig("resource", "snapshot", "element")
       end
     end
