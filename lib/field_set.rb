@@ -31,7 +31,7 @@ module FhirGen
     # == Returns:
     # N/A
     #
-    def initialize name:, full_name:, snapshot:, parent:, example_mode: :random, n_examples_ceiling: 1, data: nil
+    def initialize name:, full_name:, snapshot:, parent:, example_mode: :random, n_examples_ceiling: 3, data: nil
       @snapshot = snapshot
       @data = data
       @_name = name
@@ -105,12 +105,12 @@ module FhirGen
         # end
         if child_nodes.any?
           n_examples.times do
-            fieldset = FieldSet.new name: node_name, full_name: full_name, data: node, snapshot: child_nodes, parent: self
+            fieldset = FieldSet.new name: node_name, full_name: full_name, data: node, snapshot: child_nodes.dup, parent: self
             fill_attribute node_name: node_name, obj: fieldset
           end
         else
           n_examples.times do
-            field = Field.new name: node_name, full_name: full_name, data: node, parent: self
+            field = Field.new name: node_name, full_name: full_name, data: node.dup, parent: self
             fill_attribute node_name: node_name, obj: field
           end
         end
